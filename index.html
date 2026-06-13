@@ -95,7 +95,10 @@
     /* gallery grid */
     .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(0.9rem,2vw,1.5rem); }
     @media (min-width:46rem){ .grid--5 { grid-template-columns:repeat(3,1fr); } .grid--4 { grid-template-columns:repeat(4,1fr); } }
-    .card { background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 10px 26px rgba(94,74,82,.09); transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease; }
+    .card { display:block; background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 10px 26px rgba(94,74,82,.09); transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease; }
+    .card__cap { position:relative; }
+    .card__cap::after { content:"›"; position:absolute; right:0.9rem; top:50%; transform:translateY(-50%); color:var(--pink); font-weight:700; opacity:0; transition:opacity .2s, right .2s; }
+    .card:hover .card__cap::after { opacity:1; right:0.7rem; }
     .card:hover { transform:translateY(-5px); box-shadow:0 18px 36px rgba(94,74,82,.16); }
     .card__img { aspect-ratio:1/1; overflow:hidden; background:var(--blush-soft); }
     .card__img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
@@ -185,7 +188,7 @@
     <!-- featured item -->
     <section class="section" id="featured">
       <div class="wrap featured__in">
-        <figure class="featured__card" data-reveal><img src="photos/baa-baa-sheep.jpg" alt="Baa Baa Black Sheep — handmade crochet toy, 30 cm with a little bell" /></figure>
+        <a class="featured__card" href="product.html?id=sheep" data-reveal><img src="photos/baa-baa-sheep.jpg" alt="Baa Baa Black Sheep — handmade crochet toy, 30 cm with a little bell" /></a>
         <div class="featured__body" data-reveal>
           <p class="eyebrow" data-i18n="featEyebrow">Featured on Etsy</p>
           <h2 class="display section__title" style="margin-bottom:0.8rem" data-i18n="featTitle">Baa Baa Black Sheep</h2>
@@ -204,11 +207,11 @@
           <p class="section__sub" data-i18n="amiSub">Little crocheted friends — each one unique and one of a kind.</p>
         </div>
         <div class="grid grid--5" data-reveal>
-          <figure class="card"><div class="card__img"><img src="photos/owl.jpg" alt="Crocheted owl" loading="lazy" /></div><figcaption class="card__cap" data-i18n="capOwl">Owl</figcaption></figure>
-          <figure class="card"><div class="card__img"><img src="photos/crab.jpg" alt="Crocheted crab" loading="lazy" /></div><figcaption class="card__cap" data-i18n="capCrab">Crab</figcaption></figure>
-          <figure class="card"><div class="card__img"><img src="photos/whale.jpg" alt="Crocheted whale" loading="lazy" /></div><figcaption class="card__cap" data-i18n="capWhale">Whale</figcaption></figure>
-          <figure class="card"><div class="card__img"><img src="photos/dragon.jpg" alt="Crocheted dragon" loading="lazy" /></div><figcaption class="card__cap" data-i18n="capDragon">Dragon</figcaption></figure>
-          <figure class="card"><div class="card__img"><img src="photos/cherries.jpg" alt="Crocheted cherries" loading="lazy" /></div><figcaption class="card__cap" data-i18n="capCherries">Cherries</figcaption></figure>
+          <a class="card" href="product.html?id=owl"><div class="card__img"><img src="photos/owl.jpg" alt="Crocheted owl" loading="lazy" /></div><div class="card__cap" data-i18n="capOwl">Owl</div></a>
+          <a class="card" href="product.html?id=crab"><div class="card__img"><img src="photos/crab.jpg" alt="Crocheted crab" loading="lazy" /></div><div class="card__cap" data-i18n="capCrab">Crab</div></a>
+          <a class="card" href="product.html?id=whale"><div class="card__img"><img src="photos/whale.jpg" alt="Crocheted whale" loading="lazy" /></div><div class="card__cap" data-i18n="capWhale">Whale</div></a>
+          <a class="card" href="product.html?id=bunny"><div class="card__img"><img src="photos/bunny.jpg" alt="Crocheted bunny" loading="lazy" /></div><div class="card__cap" data-i18n="capBunny">Bunny</div></a>
+          <a class="card" href="product.html?id=cherries"><div class="card__img"><img src="photos/cherries.jpg" alt="Crocheted cherries" loading="lazy" /></div><div class="card__cap" data-i18n="capCherries">Cherries</div></a>
         </div>
       </div>
     </section>
@@ -222,10 +225,10 @@
           <p class="section__sub" data-i18n="bigSub">Bigger friends to hug and keep for years to come.</p>
         </div>
         <div class="grid grid--4" data-reveal>
-          <figure class="card"><div class="card__img"><img src="photos/bear.jpg" alt="Blue teddy bear" loading="lazy" /></div><figcaption class="card__cap" data-i18n="capBear">Teddy bear</figcaption></figure>
-          <figure class="card"><div class="card__img"><img src="photos/lamb.jpg" alt="Little lamb with a scarf" loading="lazy" /></div><figcaption class="card__cap" data-i18n="capLamb">Little lamb</figcaption></figure>
-          <figure class="card"><div class="card__img"><img src="photos/panda.jpg" alt="Crocheted panda" loading="lazy" /></div><figcaption class="card__cap" data-i18n="capPanda">Panda</figcaption></figure>
-          <figure class="card"><div class="card__img"><img src="photos/character.jpg" alt="Little crocheted character" loading="lazy" /></div><figcaption class="card__cap" data-i18n="capChar">Little friend</figcaption></figure>
+          <a class="card" href="product.html?id=bear"><div class="card__img"><img src="photos/bear.jpg" alt="Blue teddy bear" loading="lazy" /></div><div class="card__cap" data-i18n="capBear">Teddy bear</div></a>
+          <a class="card" href="product.html?id=lamb"><div class="card__img"><img src="photos/lamb.jpg" alt="Little lamb with a scarf" loading="lazy" /></div><div class="card__cap" data-i18n="capLamb">Little lamb</div></a>
+          <a class="card" href="product.html?id=cat"><div class="card__img"><img src="photos/cat.jpg" alt="Crocheted cat" loading="lazy" /></div><div class="card__cap" data-i18n="capCat">Cat</div></a>
+          <a class="card" href="product.html?id=character"><div class="card__img"><img src="photos/character.jpg" alt="Little crocheted character" loading="lazy" /></div><div class="card__cap" data-i18n="capChar">Little friend</div></a>
         </div>
       </div>
     </section>
@@ -283,9 +286,9 @@
           featEyebrow:"Featured on Etsy", featTitle:"Baa Baa Black Sheep", featText:"A 30 cm handmade sheep with a little bell on a ribbon — soft baby yarn, safe and gentle, and ready to love.",
           f1t:"Handmade with love", f2t:"Soft & cuddly", f3t:"Perfect for gifting", f4t:"Made to order",
           amiEyebrow:"The collection", amiSub:"Little crocheted friends — each one unique and one of a kind.",
-          capOwl:"Owl", capCrab:"Crab", capWhale:"Whale", capDragon:"Dragon", capCherries:"Cherries",
+          capOwl:"Owl", capCrab:"Crab", capWhale:"Whale", capBunny:"Bunny", capCherries:"Cherries",
           bigEyebrow:"The big ones", bigTitle:"Larger toys", bigSub:"Bigger friends to hug and keep for years to come.",
-          capBear:"Teddy bear", capLamb:"Little lamb", capPanda:"Panda", capChar:"Little friend",
+          capBear:"Teddy bear", capLamb:"Little lamb", capCat:"Cat", capChar:"Little friend",
           aboutEyebrow:"Meet the maker", aboutTitle:"Hi, I'm Joanna.",
           aboutP1:"I'm a grandmother who creates beautiful, happy toys. Each stitch is crafted with love, for that comforting feel of an age gone by.",
           aboutP2:"No mass production here — each piece is unique and very special. A little character to love and appreciate for many years ahead, by you or anyone you'd like to please.",
@@ -303,9 +306,9 @@
           featEyebrow:"Destacado en Etsy", featTitle:"Baa Baa Black Sheep", featText:"Una oveja de 30 cm hecha a mano con una campanita en una cinta — hilo suave para bebés, segura y tierna, lista para querer.",
           f1t:"Hecho con amor", f2t:"Suaves y achuchables", f3t:"Perfectos para regalar", f4t:"Hechos por encargo",
           amiEyebrow:"La colección", amiSub:"Pequeños amigos de crochet — cada uno único e irrepetible.",
-          capOwl:"Búho", capCrab:"Cangrejo", capWhale:"Ballena", capDragon:"Dragón", capCherries:"Cerezas",
+          capOwl:"Búho", capCrab:"Cangrejo", capWhale:"Ballena", capBunny:"Conejito", capCherries:"Cerezas",
           bigEyebrow:"Los grandes", bigTitle:"Peluches grandes", bigSub:"Amigos más grandes para abrazar y guardar durante años.",
-          capBear:"Osito", capLamb:"Corderito", capPanda:"Panda", capChar:"Amiguito",
+          capBear:"Osito", capLamb:"Corderito", capCat:"Gato", capChar:"Amiguito",
           aboutEyebrow:"Quién los teje", aboutTitle:"Hola, soy Joanna.",
           aboutP1:"Soy una abuela que crea juguetes bonitos y alegres. Cada puntada está hecha con amor, para ese consuelo cálido de los tiempos de antes.",
           aboutP2:"Aquí no hay producción en serie — cada pieza es única y muy especial. Un pequeño personaje para querer y disfrutar durante muchos años, tú o quien quieras hacer feliz.",
