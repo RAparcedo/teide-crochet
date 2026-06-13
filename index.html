@@ -1,305 +1,240 @@
 <!doctype html>
 <!--
-  PLACEHOLDER crochet brand site — image-light, warm-modern boutique.
-  Everything in [brackets] or marked "placeholder" is a stand-in to replace once
-  she revises: brand name, story, Etsy URL, Instagram, photos, the categories.
-  Design reads complete with empty image slots (design-first, images-last).
+  PLACEHOLDER crochet brand site — image-light, warm-modern boutique. Bilingual EN/ES,
+  English first (loads in EN, toggle to ES, remembers choice).
+  Everything in [brackets] / "placeholder" is a stand-in to replace once she revises:
+  brand name, story, Etsy URL, Instagram, photos, the categories.
 -->
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#FBF7F1" />
-  <title>Lana &amp; Nudo · Crochet hecho a mano · Tenerife</title>
-  <meta name="description" content="Crochet hecho a mano en Tenerife — piezas únicas, tejidas a mano. (Sitio de muestra.)" />
+  <title>Lana &amp; Nudo · Handmade crochet · Tenerife</title>
+  <meta name="description" content="Handmade crochet in Tenerife — one-of-a-kind pieces, made by hand. (Sample site.)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --paper: #FBF7F1;
-      --paper-deep: #F3ECE1;
-      --ink: #3B332B;
-      --ink-soft: rgba(59, 51, 43, 0.66);
-      --ink-faint: rgba(59, 51, 43, 0.40);
-      --hairline: rgba(59, 51, 43, 0.14);
-      --terracotta: #C06B4C;
-      --terracotta-deep: #A85738;
-      --sage: #8C9A82;
-      --font-display: "Fraunces", Georgia, serif;
-      --font-body: "DM Sans", system-ui, sans-serif;
-      --gutter: clamp(1.25rem, 5vw, 4rem);
-      --maxw: 72rem;
+      --paper: #FBF7F1; --paper-deep: #F3ECE1;
+      --ink: #3B332B; --ink-soft: rgba(59,51,43,.66); --ink-faint: rgba(59,51,43,.40);
+      --hairline: rgba(59,51,43,.14);
+      --terracotta: #C06B4C; --terracotta-deep: #A85738; --sage: #8C9A82;
+      --font-display: "Fraunces", Georgia, serif; --font-body: "DM Sans", system-ui, sans-serif;
+      --gutter: clamp(1.25rem, 5vw, 4rem); --maxw: 72rem;
     }
-    *, *::before, *::after { box-sizing: border-box; }
+    *,*::before,*::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: var(--font-body);
-      font-size: 1rem;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-    img, svg { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    h1, h2, h3, p, figure, ul, li { margin: 0; padding: 0; }
-    ul { list-style: none; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); font-size:1rem; line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+    img,svg { display:block; max-width:100%; }
+    a { color:inherit; text-decoration:none; }
+    h1,h2,h3,p,figure,ul,li { margin:0; padding:0; }
+    ul { list-style:none; }
+    .wrap { max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter); }
 
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gutter); }
+    .display { font-family:var(--font-display); font-weight:400; line-height:1.02; letter-spacing:-0.015em; }
+    .eyebrow { font-family:var(--font-body); font-size:0.72rem; font-weight:500; text-transform:uppercase; letter-spacing:0.26em; color:var(--terracotta-deep); }
 
-    /* ── type ── */
-    .display { font-family: var(--font-display); font-weight: 400; line-height: 1.02; letter-spacing: -0.015em; }
-    .eyebrow {
-      font-family: var(--font-body); font-size: 0.72rem; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 0.26em; color: var(--terracotta-deep);
-    }
+    .btn { display:inline-flex; align-items:center; gap:0.55ch; font-family:var(--font-body); font-weight:500; font-size:0.86rem; letter-spacing:0.02em; padding:0.95rem 1.6rem; border-radius:999px; border:1px solid transparent; min-height:3rem; cursor:pointer; transition:transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease; }
+    .btn--fill { background:var(--terracotta); color:#FFF; }
+    .btn--fill:hover { background:var(--terracotta-deep); transform:translateY(-1px); }
+    .btn--line { background:transparent; color:var(--ink); border-color:var(--hairline); }
+    .btn--line:hover { border-color:var(--terracotta); color:var(--terracotta-deep); }
 
-    /* ── buttons ── */
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.55ch;
-      font-family: var(--font-body); font-weight: 500; font-size: 0.86rem;
-      letter-spacing: 0.02em; padding: 0.95rem 1.6rem; border-radius: 999px;
-      border: 1px solid transparent; min-height: 3rem; cursor: pointer;
-      transition: transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
-    }
-    .btn--fill { background: var(--terracotta); color: #FFF; }
-    .btn--fill:hover { background: var(--terracotta-deep); transform: translateY(-1px); }
-    .btn--line { background: transparent; color: var(--ink); border-color: var(--hairline); }
-    .btn--line:hover { border-color: var(--terracotta); color: var(--terracotta-deep); }
-    .textlink {
-      font-weight: 500; border-bottom: 1px solid var(--terracotta); padding-bottom: 1px;
-      color: var(--terracotta-deep); transition: border-color .18s ease;
-    }
-    .textlink:hover { border-bottom-color: transparent; }
+    .slot { position:relative; background:var(--paper-deep); border:1px solid var(--hairline); border-radius:14px; overflow:hidden; display:grid; place-items:center; color:var(--ink-faint); }
+    .slot::after { content:attr(data-label); position:absolute; bottom:0.7rem; left:0; right:0; text-align:center; font-size:0.6rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-faint); }
+    .slot svg { width:34px; height:34px; opacity:0.55; }
+    .slot--portrait { aspect-ratio:4/5; } .slot--square { aspect-ratio:1/1; } .slot--wide { aspect-ratio:16/11; }
 
-    /* ── image-light slot ── */
-    .slot {
-      position: relative; background: var(--paper-deep);
-      border: 1px solid var(--hairline); border-radius: 14px; overflow: hidden;
-      display: grid; place-items: center; color: var(--ink-faint);
-    }
-    .slot::after {
-      content: attr(data-label); position: absolute; bottom: 0.7rem; left: 0; right: 0;
-      text-align: center; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--ink-faint);
-    }
-    .slot svg { width: 34px; height: 34px; opacity: 0.55; }
-    .slot--portrait { aspect-ratio: 4 / 5; }
-    .slot--square { aspect-ratio: 1 / 1; }
-    .slot--wide { aspect-ratio: 16 / 11; }
+    .masthead { position:sticky; top:0; z-index:20; background:rgba(251,247,241,.86); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border-bottom:1px solid var(--hairline); }
+    .masthead__in { display:flex; align-items:center; justify-content:space-between; gap:1rem; height:4.2rem; }
+    .brand { font-family:var(--font-display); font-weight:500; font-size:1.3rem; letter-spacing:-0.01em; white-space:nowrap; }
+    .brand span { color:var(--terracotta); }
+    .masthead__right { display:inline-flex; align-items:center; gap:0.7rem; }
+    .masthead .btn { padding:0.6rem 1.15rem; min-height:2.4rem; font-size:0.78rem; white-space:nowrap; }
+    .langtoggle { display:inline-flex; border:1px solid var(--hairline); border-radius:999px; overflow:hidden; font-family:var(--font-body); font-size:0.64rem; font-weight:500; letter-spacing:0.16em; text-transform:uppercase; line-height:1; }
+    .langtoggle button { padding:0.42rem 0.66rem; background:transparent; border:0; color:var(--ink-soft); font:inherit; letter-spacing:inherit; cursor:pointer; transition:background .2s ease, color .2s ease; }
+    .langtoggle button + button { border-left:1px solid var(--hairline); }
+    .langtoggle button:hover { color:var(--ink); }
+    .langtoggle button[aria-current="true"] { background:var(--terracotta); color:#FFF; }
+    @media (max-width:30rem) { .masthead .btn { padding:0.55rem 0.85rem; font-size:0.72rem; } }
 
-    /* ── masthead ── */
-    .masthead {
-      position: sticky; top: 0; z-index: 20; background: rgba(251, 247, 241, 0.86);
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--hairline);
-    }
-    .masthead__in { display: flex; align-items: center; justify-content: space-between; height: 4.2rem; }
-    .brand { font-family: var(--font-display); font-weight: 500; font-size: 1.3rem; letter-spacing: -0.01em; }
-    .brand span { color: var(--terracotta); }
-    .masthead .btn { padding: 0.6rem 1.15rem; min-height: 2.4rem; font-size: 0.78rem; }
+    .hero { padding:clamp(3.5rem,9vw,7rem) 0 clamp(2.5rem,6vw,4.5rem); }
+    .hero__grid { display:grid; grid-template-columns:1fr; gap:clamp(2rem,5vw,4rem); align-items:center; }
+    @media (min-width:56rem) { .hero__grid { grid-template-columns:1.05fr 0.95fr; } }
+    .hero__title { font-size:clamp(2.6rem,7vw,4.6rem); margin:1.1rem 0 0; max-width:15ch; }
+    .hero__title em { font-style:italic; color:var(--terracotta-deep); }
+    .hero__lede { font-size:1.075rem; color:var(--ink-soft); max-width:40ch; margin:1.4rem 0 2rem; }
+    .hero__cta { display:flex; flex-wrap:wrap; gap:0.8rem; align-items:center; }
+    .hero__media { position:relative; }
+    .hero__media .slot { aspect-ratio:4/5; }
+    .hero__badge { position:absolute; bottom:-1rem; left:-1rem; background:var(--paper); border:1px solid var(--hairline); border-radius:999px; padding:0.6rem 1.1rem; font-size:0.74rem; font-weight:500; box-shadow:0 10px 30px rgba(59,51,43,.08); }
+    .hero__badge b { color:var(--terracotta-deep); }
 
-    /* ── hero ── */
-    .hero { padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4.5rem); }
-    .hero__grid { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
-    @media (min-width: 56rem) { .hero__grid { grid-template-columns: 1.05fr 0.95fr; } }
-    .hero__title { font-size: clamp(2.6rem, 7vw, 4.6rem); margin: 1.1rem 0 0; max-width: 14ch; }
-    .hero__title em { font-style: italic; color: var(--terracotta-deep); }
-    .hero__lede { font-size: 1.075rem; color: var(--ink-soft); max-width: 38ch; margin: 1.4rem 0 2rem; }
-    .hero__cta { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
-    .hero__media { position: relative; }
-    .hero__media .slot { aspect-ratio: 4 / 5; }
-    .hero__badge {
-      position: absolute; bottom: -1rem; left: -1rem; background: var(--paper);
-      border: 1px solid var(--hairline); border-radius: 999px; padding: 0.6rem 1.1rem;
-      font-size: 0.74rem; font-weight: 500; box-shadow: 0 10px 30px rgba(59,51,43,0.08);
-    }
-    .hero__badge b { color: var(--terracotta-deep); }
+    .section { padding:clamp(3.5rem,8vw,6.5rem) 0; }
+    .section--paper-deep { background:var(--paper-deep); }
+    .section__head { max-width:46rem; margin-bottom:clamp(2rem,4vw,3.25rem); }
+    .section__title { font-size:clamp(2rem,4.5vw,3rem); margin-top:0.6rem; }
+    .section__sub { color:var(--ink-soft); margin-top:0.9rem; max-width:46ch; }
 
-    /* ── section frame ── */
-    .section { padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
-    .section--paper-deep { background: var(--paper-deep); }
-    .section__head { max-width: 46rem; margin-bottom: clamp(2rem, 4vw, 3.25rem); }
-    .section__title { font-size: clamp(2rem, 4.5vw, 3rem); margin-top: 0.6rem; }
-    .section__sub { color: var(--ink-soft); margin-top: 0.9rem; max-width: 44ch; }
+    .gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(0.8rem,2vw,1.4rem); }
+    @media (min-width:48rem) { .gallery { grid-template-columns:repeat(3,1fr); } }
+    .gallery .slot:nth-child(1) { grid-row:span 2; aspect-ratio:auto; }
 
-    /* ── gallery ── */
-    .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(0.8rem, 2vw, 1.4rem); }
-    @media (min-width: 48rem) { .gallery { grid-template-columns: repeat(3, 1fr); } }
-    .gallery .slot:nth-child(1) { grid-row: span 2; }
-    .gallery .slot:nth-child(1) { aspect-ratio: auto; }
+    .about { display:grid; grid-template-columns:1fr; gap:clamp(2rem,5vw,3.5rem); align-items:center; }
+    @media (min-width:56rem) { .about { grid-template-columns:0.8fr 1fr; } }
+    .about__body p + p { margin-top:1.1rem; }
+    .about__sign { font-family:var(--font-display); font-style:italic; font-size:1.35rem; color:var(--terracotta-deep); margin-top:1.4rem; }
 
-    /* ── about ── */
-    .about { display: grid; grid-template-columns: 1fr; gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
-    @media (min-width: 56rem) { .about { grid-template-columns: 0.8fr 1fr; } }
-    .about__body p + p { margin-top: 1.1rem; }
-    .about__sign { font-family: var(--font-display); font-style: italic; font-size: 1.35rem; color: var(--terracotta-deep); margin-top: 1.4rem; }
+    .cats { display:grid; grid-template-columns:1fr; gap:clamp(1rem,2.5vw,1.6rem); }
+    @media (min-width:44rem) { .cats { grid-template-columns:repeat(3,1fr); } }
+    .cat { background:var(--paper); border:1px solid var(--hairline); border-radius:16px; padding:1.4rem; }
+    .cat .slot { aspect-ratio:5/4; margin-bottom:1.1rem; }
+    .cat h3 { font-family:var(--font-display); font-weight:500; font-size:1.4rem; }
+    .cat p { color:var(--ink-soft); font-size:0.94rem; margin-top:0.4rem; }
 
-    /* ── categories ── */
-    .cats { display: grid; grid-template-columns: 1fr; gap: clamp(1rem, 2.5vw, 1.6rem); }
-    @media (min-width: 44rem) { .cats { grid-template-columns: repeat(3, 1fr); } }
-    .cat { background: var(--paper); border: 1px solid var(--hairline); border-radius: 16px; padding: 1.4rem; }
-    .cat .slot { aspect-ratio: 5 / 4; margin-bottom: 1.1rem; }
-    .cat h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.4rem; }
-    .cat p { color: var(--ink-soft); font-size: 0.94rem; margin-top: 0.4rem; }
+    .band { background:var(--ink); color:var(--paper); text-align:center; }
+    .band__in { padding:clamp(3.5rem,8vw,6rem) 0; }
+    .band h2 { font-family:var(--font-display); font-weight:400; font-size:clamp(1.9rem,5vw,3.1rem); line-height:1.1; max-width:20ch; margin:0 auto; }
+    .band h2 em { font-style:italic; color:#E9B79E; }
+    .band .btn--fill { margin-top:1.8rem; }
+    .band__note { color:rgba(251,247,241,.55); font-size:0.82rem; margin-top:1.1rem; }
 
-    /* ── shop band ── */
-    .band { background: var(--ink); color: var(--paper); text-align: center; }
-    .band__in { padding: clamp(3.5rem, 8vw, 6rem) 0; }
-    .band h2 { font-family: var(--font-display); font-weight: 400; font-size: clamp(1.9rem, 5vw, 3.1rem); line-height: 1.1; max-width: 18ch; margin: 0 auto; }
-    .band h2 em { font-style: italic; color: #E9B79E; }
-    .band .btn--fill { margin-top: 1.8rem; }
-    .band__note { color: rgba(251,247,241,0.55); font-size: 0.82rem; margin-top: 1.1rem; }
+    .commission { display:grid; grid-template-columns:1fr; gap:2rem; align-items:center; }
+    @media (min-width:52rem) { .commission { grid-template-columns:1.1fr 0.9fr; } }
+    .commission__links { display:flex; flex-wrap:wrap; gap:0.7rem; margin-top:1.5rem; }
 
-    /* ── commissions ── */
-    .commission { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: center; }
-    @media (min-width: 52rem) { .commission { grid-template-columns: 1.1fr 0.9fr; } }
-    .commission__links { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.5rem; }
+    .foot { border-top:1px solid var(--hairline); padding:clamp(2.5rem,5vw,3.5rem) 0 2.5rem; }
+    .foot__in { display:flex; flex-wrap:wrap; gap:1.5rem; justify-content:space-between; align-items:baseline; }
+    .foot__links { display:flex; gap:1.4rem; flex-wrap:wrap; font-size:0.86rem; }
+    .foot__links a:hover { color:var(--terracotta-deep); }
+    .foot__fine { color:var(--ink-faint); font-size:0.76rem; margin-top:1.6rem; }
+    .placeholder-tag { display:inline-block; background:var(--paper-deep); border:1px dashed var(--terracotta); color:var(--terracotta-deep); font-size:0.68rem; letter-spacing:0.04em; padding:0.2rem 0.6rem; border-radius:999px; }
 
-    /* ── footer ── */
-    .foot { border-top: 1px solid var(--hairline); padding: clamp(2.5rem, 5vw, 3.5rem) 0 2.5rem; }
-    .foot__in { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between; align-items: baseline; }
-    .foot__links { display: flex; gap: 1.4rem; flex-wrap: wrap; font-size: 0.86rem; }
-    .foot__links a:hover { color: var(--terracotta-deep); }
-    .foot__fine { color: var(--ink-faint); font-size: 0.76rem; margin-top: 1.6rem; }
-    .placeholder-tag {
-      display: inline-block; background: var(--paper-deep); border: 1px dashed var(--terracotta);
-      color: var(--terracotta-deep); font-size: 0.68rem; letter-spacing: 0.04em;
-      padding: 0.2rem 0.6rem; border-radius: 999px;
-    }
-
-    /* ── signature motion: scroll reveal ── */
-    [data-reveal] { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
-    [data-reveal].in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      [data-reveal] { opacity: 1; transform: none; transition: none; }
-    }
+    [data-reveal] { opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+    [data-reveal].in { opacity:1; transform:none; }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } [data-reveal] { opacity:1; transform:none; transition:none; } }
   </style>
 </head>
 <body>
-  <!-- masthead -->
   <header class="masthead">
     <div class="wrap masthead__in">
       <a class="brand" href="#top">Lana<span>&amp;</span>Nudo</a>
-      <a class="btn btn--fill" href="#" data-etsy>Comprar en Etsy</a>
+      <div class="masthead__right">
+        <div class="langtoggle" role="group" aria-label="Language · Idioma">
+          <button type="button" data-lang-set="en" aria-label="English">EN</button>
+          <button type="button" data-lang-set="es" aria-label="Español">ES</button>
+        </div>
+        <a class="btn btn--fill" href="#" data-etsy data-i18n="navShop">Shop on Etsy</a>
+      </div>
     </div>
   </header>
 
   <main id="top">
-    <!-- hero -->
     <section class="hero">
       <div class="wrap hero__grid">
         <div data-reveal>
-          <p class="eyebrow">Crochet hecho a mano · Tenerife</p>
-          <h1 class="display hero__title">Cada pieza, <em>tejida a mano</em> con calma.</h1>
-          <p class="hero__lede">Piezas únicas de crochet, hechas hilo a hilo. Encuéntralas en mi tienda de Etsy — o pídeme algo a medida.</p>
+          <p class="eyebrow" data-i18n="heroEyebrow">Handmade crochet · Tenerife</p>
+          <h1 class="display hero__title" data-i18n="heroTitle" data-i18n-html>Every piece, <em>made by hand</em>, slowly.</h1>
+          <p class="hero__lede" data-i18n="heroLede">Unique crochet pieces, made stitch by stitch. Find them in my Etsy shop — or ask me for something made just for you.</p>
           <div class="hero__cta">
-            <a class="btn btn--fill" href="#" data-etsy>Comprar en Etsy</a>
-            <a class="btn btn--line" href="#trabajo">Ver el trabajo</a>
+            <a class="btn btn--fill" href="#" data-etsy data-i18n="navShop">Shop on Etsy</a>
+            <a class="btn btn--line" href="#work" data-i18n="heroSeeWork">See the work</a>
           </div>
         </div>
         <div class="hero__media" data-reveal>
-          <figure class="slot slot--portrait" data-label="foto destacada">
+          <figure class="slot slot--portrait" data-label="featured photo" data-i18n-label="lblFeatured">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="8.5"/><path d="M5 9c3 1.5 11 1.5 14 0M5 15c3-1.5 11-1.5 14 0M9.5 4c-1.5 4-1.5 12 0 16M14.5 4c1.5 4 1.5 12 0 16"/></svg>
           </figure>
-          <span class="hero__badge">Hecho a mano · <b>piezas únicas</b></span>
+          <span class="hero__badge" data-i18n="heroBadge" data-i18n-html>Handmade · <b>one of a kind</b></span>
         </div>
       </div>
     </section>
 
-    <!-- gallery -->
-    <section class="section section--paper-deep" id="trabajo">
+    <section class="section section--paper-deep" id="work">
       <div class="wrap">
         <div class="section__head" data-reveal>
-          <p class="eyebrow">La colección</p>
-          <h2 class="display section__title">El trabajo.</h2>
-          <p class="section__sub">Una muestra de lo último que ha salido de la cesta de la lana. Cada foto enlazará con su pieza en Etsy.</p>
+          <p class="eyebrow" data-i18n="galEyebrow">The collection</p>
+          <h2 class="display section__title" data-i18n="galTitle">The work.</h2>
+          <p class="section__sub" data-i18n="galSub">A look at the latest out of the yarn basket — each photo will link to its piece on Etsy.</p>
         </div>
         <div class="gallery" data-reveal>
-          <figure class="slot" data-label="pieza 01"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M3.5 10.5c4 2 13 2 17 0M3.5 13.5c4-2 13-2 17 0"/></svg></figure>
-          <figure class="slot slot--square" data-label="pieza 02"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M9 4c-1 5-1 11 0 16M15 4c1 5 1 11 0 16"/></svg></figure>
-          <figure class="slot slot--square" data-label="pieza 03"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M4 12h16"/></svg></figure>
-          <figure class="slot slot--square" data-label="pieza 04"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M3.5 10.5c4 2 13 2 17 0M3.5 13.5c4-2 13-2 17 0"/></svg></figure>
-          <figure class="slot slot--square" data-label="pieza 05"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M9 4c-1 5-1 11 0 16M15 4c1 5 1 11 0 16"/></svg></figure>
+          <figure class="slot" data-label="piece 01" data-i18n-label="lblPiece1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M3.5 10.5c4 2 13 2 17 0M3.5 13.5c4-2 13-2 17 0"/></svg></figure>
+          <figure class="slot slot--square" data-label="piece 02" data-i18n-label="lblPiece2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M9 4c-1 5-1 11 0 16M15 4c1 5 1 11 0 16"/></svg></figure>
+          <figure class="slot slot--square" data-label="piece 03" data-i18n-label="lblPiece3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M4 12h16"/></svg></figure>
+          <figure class="slot slot--square" data-label="piece 04" data-i18n-label="lblPiece4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M3.5 10.5c4 2 13 2 17 0M3.5 13.5c4-2 13-2 17 0"/></svg></figure>
+          <figure class="slot slot--square" data-label="piece 05" data-i18n-label="lblPiece5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="9"/><path d="M9 4c-1 5-1 11 0 16M15 4c1 5 1 11 0 16"/></svg></figure>
         </div>
       </div>
     </section>
 
-    <!-- about -->
     <section class="section">
       <div class="wrap about">
-        <figure class="slot slot--portrait" data-label="retrato" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="9" r="4"/><path d="M5 20c1.5-4 12.5-4 14 0"/></svg></figure>
+        <figure class="slot slot--portrait" data-label="portrait" data-i18n-label="lblPortrait" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="9" r="4"/><path d="M5 20c1.5-4 12.5-4 14 0"/></svg></figure>
         <div class="about__body" data-reveal>
-          <p class="eyebrow">Sobre mí</p>
-          <h2 class="display section__title" style="margin-bottom:1.2rem">Una idea, un ovillo, y mucho tiempo.</h2>
-          <p>[Aquí irá su historia — cómo empezó con el crochet, qué le gusta tejer, de dónde saca la inspiración. Texto de muestra para que se vea el sitio completo.]</p>
-          <p>Trabajo con materiales de calidad y dedico a cada pieza el tiempo que necesita. Nada en serie: si lo tienes en las manos, es solo para ti.</p>
-          <p class="about__sign">— [Nombre]</p>
+          <p class="eyebrow" data-i18n="aboutEyebrow">About me</p>
+          <h2 class="display section__title" style="margin-bottom:1.2rem" data-i18n="aboutTitle">An idea, a ball of yarn, and a lot of time.</h2>
+          <p data-i18n="aboutP1">[Her story goes here — how she got into crochet, what she loves to make, where she finds her inspiration. Placeholder text so the site reads complete.]</p>
+          <p data-i18n="aboutP2">I work with good materials and give every piece the time it needs. Nothing mass-made: if it's in your hands, it was made just for you.</p>
+          <p class="about__sign" data-i18n="aboutSign">— [Name]</p>
         </div>
       </div>
     </section>
 
-    <!-- categories -->
     <section class="section section--paper-deep">
       <div class="wrap">
         <div class="section__head" data-reveal>
-          <p class="eyebrow">Lo que hago</p>
-          <h2 class="display section__title">Hecho a mano, a tu medida.</h2>
+          <p class="eyebrow" data-i18n="catEyebrow">What I make</p>
+          <h2 class="display section__title" data-i18n="catTitle">Handmade, your way.</h2>
         </div>
         <div class="cats" data-reveal>
           <article class="cat">
-            <figure class="slot" data-label="categoría"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="13" r="6"/><path d="M9 4l3 3 3-3"/></svg></figure>
-            <h3>Amigurumi</h3>
-            <p>Muñequitos y figuras tejidas — el regalo que nadie más tiene. <span class="placeholder-tag">editar</span></p>
+            <figure class="slot" data-label="category" data-i18n-label="lblCategory"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="13" r="6"/><path d="M9 4l3 3 3-3"/></svg></figure>
+            <h3 data-i18n="cat1Name">Amigurumi</h3>
+            <p><span data-i18n="cat1Desc">Little crocheted characters and figures — the gift nobody else has.</span> <span class="placeholder-tag" data-i18n="tagEdit">edit</span></p>
           </article>
           <article class="cat">
-            <figure class="slot" data-label="categoría"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 7l6-3 6 3-2 4H8z"/><path d="M8 11v8h8v-8"/></svg></figure>
-            <h3>Para llevar</h3>
-            <p>Bolsos, gorros y prendas tejidas para el día a día. <span class="placeholder-tag">editar</span></p>
+            <figure class="slot" data-label="category" data-i18n-label="lblCategory"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 7l6-3 6 3-2 4H8z"/><path d="M8 11v8h8v-8"/></svg></figure>
+            <h3 data-i18n="cat2Name">To wear &amp; carry</h3>
+            <p><span data-i18n="cat2Desc">Bags, hats and pieces to wear every day.</span> <span class="placeholder-tag" data-i18n="tagEdit">edit</span></p>
           </article>
           <article class="cat">
-            <figure class="slot" data-label="categoría"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 10l8-6 8 6v9H4z"/><path d="M9 19v-5h6v5"/></svg></figure>
-            <h3>Para casa</h3>
-            <p>Cojines, posavasos y detalles para dar calor al hogar. <span class="placeholder-tag">editar</span></p>
+            <figure class="slot" data-label="category" data-i18n-label="lblCategory"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 10l8-6 8 6v9H4z"/><path d="M9 19v-5h6v5"/></svg></figure>
+            <h3 data-i18n="cat3Name">For the home</h3>
+            <p><span data-i18n="cat3Desc">Cushions, coasters and little touches to warm up the home.</span> <span class="placeholder-tag" data-i18n="tagEdit">edit</span></p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- shop band -->
     <section class="band">
       <div class="wrap band__in" data-reveal>
-        <p class="eyebrow" style="color:#E9B79E">La tienda</p>
-        <h2 style="margin-top:0.8rem">Cada pieza es única. <em>Encuéntralas en mi Etsy.</em></h2>
-        <a class="btn btn--fill" href="#" data-etsy>Comprar en Etsy</a>
-        <p class="band__note">El enlace de Etsy se pondrá aquí cuando la tienda esté lista.</p>
+        <p class="eyebrow" style="color:#E9B79E" data-i18n="bandEyebrow">The shop</p>
+        <h2 style="margin-top:0.8rem" data-i18n="bandTitle" data-i18n-html>Every piece is one of a kind. <em>Find them in my Etsy.</em></h2>
+        <a class="btn btn--fill" href="#" data-etsy data-i18n="navShop">Shop on Etsy</a>
+        <p class="band__note" data-i18n="bandNote">The Etsy link will go here once the shop is ready.</p>
       </div>
     </section>
 
-    <!-- commissions -->
     <section class="section">
       <div class="wrap commission">
         <div data-reveal>
-          <p class="eyebrow">Encargos a medida</p>
-          <h2 class="display section__title" style="margin-bottom:1rem">¿Quieres algo hecho solo para ti?</h2>
-          <p class="section__sub" style="max-width:40ch">Colores, tamaños, una idea que tienes en la cabeza… escríbeme y lo tejemos juntos.</p>
+          <p class="eyebrow" data-i18n="comEyebrow">Custom orders</p>
+          <h2 class="display section__title" style="margin-bottom:1rem" data-i18n="comTitle">Want something made just for you?</h2>
+          <p class="section__sub" style="max-width:42ch" data-i18n="comSub">Colours, sizes, an idea you have in mind… write to me and we'll make it together.</p>
           <div class="commission__links">
             <a class="btn btn--line" href="#" data-wa>WhatsApp</a>
             <a class="btn btn--line" href="#" data-ig>Instagram</a>
-            <a class="btn btn--line" href="#" data-mail>Email</a>
+            <a class="btn btn--line" href="#" data-mail data-i18n="comEmail">Email</a>
           </div>
         </div>
-        <figure class="slot slot--wide" data-label="proceso · manos tejiendo" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 14c2-3 5-3 7 0M13 11c2-3 5-3 7 0"/><circle cx="6" cy="9" r="1.4"/><circle cx="18" cy="16" r="1.4"/></svg></figure>
+        <figure class="slot slot--wide" data-label="process · hands at work" data-i18n-label="lblProcess" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 14c2-3 5-3 7 0M13 11c2-3 5-3 7 0"/><circle cx="6" cy="9" r="1.4"/><circle cx="18" cy="16" r="1.4"/></svg></figure>
       </div>
     </section>
   </main>
 
-  <!-- footer -->
   <footer class="foot">
     <div class="wrap">
       <div class="foot__in">
@@ -311,26 +246,109 @@
         </nav>
       </div>
       <p class="foot__fine">
-        Crochet hecho a mano en Tenerife. &nbsp;·&nbsp; Sitio de muestra
-        <span class="placeholder-tag">placeholder — pendiente de su revisión</span>
+        <span data-i18n="footFine">Handmade crochet in Tenerife. · Sample site</span>
+        <span class="placeholder-tag" data-i18n="footTag">placeholder — pending her review</span>
       </p>
     </div>
   </footer>
 
   <script>
     (function () {
-      var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var els = document.querySelectorAll('[data-reveal]');
-      if (reduce || !('IntersectionObserver' in window)) {
-        els.forEach(function (el) { el.classList.add('in'); });
-        return;
+      var DICT = {
+        en: {
+          navShop: "Shop on Etsy",
+          heroEyebrow: "Handmade crochet · Tenerife",
+          heroTitle: "Every piece, <em>made by hand</em>, slowly.",
+          heroLede: "Unique crochet pieces, made stitch by stitch. Find them in my Etsy shop — or ask me for something made just for you.",
+          heroSeeWork: "See the work",
+          heroBadge: "Handmade · <b>one of a kind</b>",
+          lblFeatured: "featured photo",
+          galEyebrow: "The collection", galTitle: "The work.",
+          galSub: "A look at the latest out of the yarn basket — each photo will link to its piece on Etsy.",
+          lblPiece1: "piece 01", lblPiece2: "piece 02", lblPiece3: "piece 03", lblPiece4: "piece 04", lblPiece5: "piece 05",
+          lblPortrait: "portrait",
+          aboutEyebrow: "About me", aboutTitle: "An idea, a ball of yarn, and a lot of time.",
+          aboutP1: "[Her story goes here — how she got into crochet, what she loves to make, where she finds her inspiration. Placeholder text so the site reads complete.]",
+          aboutP2: "I work with good materials and give every piece the time it needs. Nothing mass-made: if it's in your hands, it was made just for you.",
+          aboutSign: "— [Name]",
+          catEyebrow: "What I make", catTitle: "Handmade, your way.",
+          lblCategory: "category", tagEdit: "edit",
+          cat1Name: "Amigurumi", cat1Desc: "Little crocheted characters and figures — the gift nobody else has.",
+          cat2Name: "To wear & carry", cat2Desc: "Bags, hats and pieces to wear every day.",
+          cat3Name: "For the home", cat3Desc: "Cushions, coasters and little touches to warm up the home.",
+          bandEyebrow: "The shop", bandTitle: "Every piece is one of a kind. <em>Find them in my Etsy.</em>",
+          bandNote: "The Etsy link will go here once the shop is ready.",
+          comEyebrow: "Custom orders", comTitle: "Want something made just for you?",
+          comSub: "Colours, sizes, an idea you have in mind… write to me and we'll make it together.",
+          comEmail: "Email",
+          footFine: "Handmade crochet in Tenerife. · Sample site",
+          footTag: "placeholder — pending her review"
+        },
+        es: {
+          navShop: "Comprar en Etsy",
+          heroEyebrow: "Crochet hecho a mano · Tenerife",
+          heroTitle: "Cada pieza, <em>tejida a mano</em> con calma.",
+          heroLede: "Piezas únicas de crochet, hechas hilo a hilo. Encuéntralas en mi tienda de Etsy — o pídeme algo a medida.",
+          heroSeeWork: "Ver el trabajo",
+          heroBadge: "Hecho a mano · <b>piezas únicas</b>",
+          lblFeatured: "foto destacada",
+          galEyebrow: "La colección", galTitle: "El trabajo.",
+          galSub: "Una muestra de lo último que ha salido de la cesta de la lana — cada foto enlazará con su pieza en Etsy.",
+          lblPiece1: "pieza 01", lblPiece2: "pieza 02", lblPiece3: "pieza 03", lblPiece4: "pieza 04", lblPiece5: "pieza 05",
+          lblPortrait: "retrato",
+          aboutEyebrow: "Sobre mí", aboutTitle: "Una idea, un ovillo, y mucho tiempo.",
+          aboutP1: "[Aquí irá su historia — cómo empezó con el crochet, qué le gusta tejer, de dónde saca la inspiración. Texto de muestra para que se vea el sitio completo.]",
+          aboutP2: "Trabajo con materiales de calidad y dedico a cada pieza el tiempo que necesita. Nada en serie: si lo tienes en las manos, es solo para ti.",
+          aboutSign: "— [Nombre]",
+          catEyebrow: "Lo que hago", catTitle: "Hecho a mano, a tu medida.",
+          lblCategory: "categoría", tagEdit: "editar",
+          cat1Name: "Amigurumi", cat1Desc: "Muñequitos y figuras tejidas — el regalo que nadie más tiene.",
+          cat2Name: "Para llevar", cat2Desc: "Bolsos, gorros y prendas tejidas para el día a día.",
+          cat3Name: "Para casa", cat3Desc: "Cojines, posavasos y detalles para dar calor al hogar.",
+          bandEyebrow: "La tienda", bandTitle: "Cada pieza es única. <em>Encuéntralas en mi Etsy.</em>",
+          bandNote: "El enlace de Etsy se pondrá aquí cuando la tienda esté lista.",
+          comEyebrow: "Encargos a medida", comTitle: "¿Quieres algo hecho solo para ti?",
+          comSub: "Colores, tamaños, una idea que tienes en la cabeza… escríbeme y lo tejemos juntos.",
+          comEmail: "Email",
+          footFine: "Crochet hecho a mano en Tenerife. · Sitio de muestra",
+          footTag: "placeholder — pendiente de su revisión"
+        }
+      };
+      var KEY = "crochet-lang";
+      function applyLang(lang) {
+        if (lang !== "en" && lang !== "es") lang = "en";
+        document.documentElement.lang = lang;
+        var d = DICT[lang] || {};
+        document.querySelectorAll("[data-i18n]").forEach(function (el) {
+          var k = el.getAttribute("data-i18n");
+          if (d[k] == null) return;
+          if (el.hasAttribute("data-i18n-html")) el.innerHTML = d[k]; else el.textContent = d[k];
+        });
+        document.querySelectorAll("[data-i18n-label]").forEach(function (el) {
+          var k = el.getAttribute("data-i18n-label");
+          if (d[k] != null) el.setAttribute("data-label", d[k]);
+        });
+        document.querySelectorAll("[data-lang-set]").forEach(function (b) {
+          b.setAttribute("aria-current", b.getAttribute("data-lang-set") === lang ? "true" : "false");
+        });
+        try { localStorage.setItem(KEY, lang); } catch (e) {}
       }
+      var saved;
+      try { saved = localStorage.getItem(KEY); } catch (e) {}
+      applyLang(saved || "en"); // English first
+      document.querySelectorAll("[data-lang-set]").forEach(function (b) {
+        b.addEventListener("click", function () { applyLang(b.getAttribute("data-lang-set")); });
+      });
+
+      // signature motion: scroll reveal
+      var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var els = document.querySelectorAll("[data-reveal]");
+      if (reduce || !("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("in"); }); return; }
       var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
       els.forEach(function (el) { io.observe(el); });
-      // safety net for any non-observing renderer
-      setTimeout(function () { els.forEach(function (el) { el.classList.add('in'); }); }, 1600);
+      setTimeout(function () { els.forEach(function (el) { el.classList.add("in"); }); }, 1600);
     })();
   </script>
 </body>
