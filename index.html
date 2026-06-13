@@ -62,6 +62,28 @@
     .langtoggle button:hover { color:var(--ink); }
     .langtoggle button[aria-current="true"] { background:var(--pink); color:#FFF; }
     @media (max-width:30rem){ .mark{font-size:1.2rem;} .masthead .btn{padding:0.5rem 0.8rem; font-size:0.74rem;} }
+    .masthead__left { display:inline-flex; align-items:center; gap:0.7rem; min-width:0; }
+    .menu-btn { display:inline-flex; align-items:center; justify-content:center; width:2.6rem; height:2.6rem; flex:none; padding:0; border:1px solid var(--blush-deep); background:transparent; border-radius:12px; color:var(--ink); cursor:pointer; transition:border-color .2s, color .2s, background .2s; }
+    .menu-btn:hover { border-color:var(--pink); color:var(--pink-deep); background:var(--blush-soft); }
+    .menu-btn svg { width:1.3rem; height:1.3rem; }
+    @media (max-width:26rem){ .masthead__etsy { display:none; } }
+
+    /* section sidebar */
+    .sidebar-backdrop { position:fixed; inset:0; z-index:40; background:rgba(94,74,82,.42); -webkit-backdrop-filter:blur(2px); backdrop-filter:blur(2px); opacity:0; transition:opacity .3s ease; }
+    .sidebar-backdrop.show { opacity:1; }
+    .sidebar { position:fixed; top:0; left:0; z-index:50; height:100dvh; width:min(84vw,20rem); display:flex; flex-direction:column; padding:1.4rem; background:var(--paper); box-shadow:0 0 60px rgba(94,74,82,.22); transform:translateX(-101%); transition:transform .34s cubic-bezier(.22,1,.36,1); }
+    .sidebar.open { transform:none; }
+    .sidebar__head { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-bottom:1.4rem; padding-bottom:1.2rem; border-bottom:1px solid var(--hairline); }
+    .sidebar__close { width:2.4rem; height:2.4rem; flex:none; border:0; background:transparent; color:var(--ink-soft); font-size:1.9rem; line-height:1; cursor:pointer; border-radius:10px; transition:color .2s, background .2s; }
+    .sidebar__close:hover { color:var(--pink-deep); background:var(--blush-soft); }
+    .sidebar__nav { display:flex; flex-direction:column; gap:0.15rem; flex:1 1 auto; }
+    .sidebar__nav a { position:relative; font-family:var(--font-display); font-weight:600; font-size:1.12rem; color:var(--ink); padding:0.72rem 0.5rem 0.72rem 0.95rem; border-radius:12px; transition:background .2s, color .2s; }
+    .sidebar__nav a:hover { background:var(--blush-soft); color:var(--pink-deep); }
+    .sidebar__nav a[aria-current="true"] { color:var(--pink-deep); background:var(--blush-soft); }
+    .sidebar__nav a[aria-current="true"]::before { content:""; position:absolute; left:0; top:0.65rem; bottom:0.65rem; width:3px; border-radius:3px; background:var(--pink); }
+    .sidebar__etsy { width:100%; justify-content:center; margin-top:1rem; }
+    body.menu-open { overflow:hidden; }
+    @media (prefers-reduced-motion:reduce){ .sidebar{transition:none;} .sidebar-backdrop{transition:none;} }
 
     /* hero */
     .hero { padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(3rem,7vw,5rem); text-align:center; }
@@ -139,16 +161,38 @@
 <body>
   <header class="masthead">
     <div class="wrap masthead__in">
-      <a class="mark" href="#top">Stitch<span class="script">not</span>bitch</a>
+      <div class="masthead__left">
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <a class="mark" href="#top">Stitch<span class="script">not</span>bitch</a>
+      </div>
       <div class="masthead__right">
         <div class="langtoggle" role="group" aria-label="Language · Idioma">
           <button type="button" data-lang-set="en" aria-label="English">EN</button>
           <button type="button" data-lang-set="es" aria-label="Español">ES</button>
         </div>
-        <a class="btn btn--fill" href="#" data-etsy data-i18n="navShop">Shop on Etsy</a>
+        <a class="btn btn--fill masthead__etsy" href="#" data-etsy data-i18n="navShop">Shop on Etsy</a>
       </div>
     </div>
   </header>
+
+  <!-- section sidebar -->
+  <div class="sidebar-backdrop" id="sbBackdrop" hidden></div>
+  <aside class="sidebar" id="sidebar" aria-label="Sections" aria-hidden="true">
+    <div class="sidebar__head">
+      <span class="mark">Stitch<span class="script">not</span>bitch</span>
+      <button class="sidebar__close" id="sbClose" type="button" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="sidebar__nav">
+      <a href="#featured" data-i18n="navFeat">Baa Baa Black Sheep</a>
+      <a href="#amigurumi" data-i18n="navAmi">Amigurumi</a>
+      <a href="#larger" data-i18n="navBig">Larger toys</a>
+      <a href="#keychains" data-i18n="navKey">Keychains</a>
+      <a href="#about" data-i18n="navAbout">Meet the maker</a>
+    </nav>
+    <a class="btn btn--fill sidebar__etsy" href="#" data-etsy data-i18n="navShop">Shop on Etsy</a>
+  </aside>
 
   <main id="top">
     <!-- hero -->
@@ -181,7 +225,7 @@
         </div>
         <div class="feature">
           <svg class="feature__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l2.3 4.7L19.5 8l-3.7 3.6.9 5.2L12 14.3 7.3 16.8l.9-5.2L4.5 8l5.2-.3z"/></svg>
-          <h3 data-i18n="f4t">Made to order</h3>
+          <h3 data-i18n="f4t">One of a kind</h3>
         </div>
       </div>
     </section>
@@ -234,8 +278,25 @@
       </div>
     </section>
 
+    <!-- keychains -->
+    <section class="section" id="keychains">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow" data-i18n="keyEyebrow">Little extras</p>
+          <h2 class="display section__title" data-i18n="keyTitle">Keychains</h2>
+          <p class="section__sub" data-i18n="keySub">Tiny charms to clip on a bag or your keys — a little handmade joy to carry everywhere.</p>
+        </div>
+        <div class="grid grid--4" data-reveal>
+          <a class="card" href="product.html?id=khheart"><div class="card__img"><img src="photos/kc-heart-coral.jpg" alt="Crocheted heart keychain" loading="lazy" /></div><div class="card__cap" data-i18n="capKhHeart">Heart</div></a>
+          <a class="card" href="product.html?id=khcherries"><div class="card__img"><img src="photos/kc-cherries.jpg" alt="Crocheted cherries keychain" loading="lazy" /></div><div class="card__cap" data-i18n="capKhCherries">Cherries</div></a>
+          <a class="card" href="product.html?id=khcharm"><div class="card__img"><img src="photos/kc-charm.jpg" alt="Crocheted cat and heart charm keychain" loading="lazy" /></div><div class="card__cap" data-i18n="capKhCharm">Cat &amp; heart</div></a>
+          <a class="card" href="product.html?id=khpink"><div class="card__img"><img src="photos/kc-heart-pink.jpg" alt="Pink crocheted heart keychain" loading="lazy" /></div><div class="card__cap" data-i18n="capKhPink">Heart</div></a>
+        </div>
+      </div>
+    </section>
+
     <!-- about Joanna -->
-    <section class="section section--blush">
+    <section class="section section--blush" id="about">
       <div class="wrap about">
         <figure class="about__photo" data-reveal><img src="photos/about.jpg" alt="A handmade crochet friend by Stitchnotbitch" /></figure>
         <div class="about__body" data-reveal>
@@ -281,15 +342,18 @@
       var DICT = {
         en: {
           navShop:"Shop on Etsy",
+          navFeat:"Baa Baa Black Sheep", navAmi:"Amigurumi", navBig:"Larger toys", navKey:"Keychains", navAbout:"Meet the maker",
           heroEyebrow:"Handmade amigurumi · Tenerife",
           heroTagline:"Tiny handmade friends, each one stitched with love.",
           heroSee:"Meet the friends",
           featEyebrow:"Featured on Etsy", featTitle:"Baa Baa Black Sheep", featText:"A 30 cm handmade sheep with a little bell on a ribbon — soft baby yarn, safe and gentle, and ready to love.",
-          f1t:"Handmade with love", f2t:"Soft & cuddly", f3t:"Perfect for gifting", f4t:"Made to order",
+          f1t:"Handmade with love", f2t:"Soft & cuddly", f3t:"Perfect for gifting", f4t:"One of a kind",
           amiEyebrow:"The collection", amiSub:"Little crocheted friends — each one unique and one of a kind.",
           capOwl:"Owl", capCrab:"Crab", capFrog:"Frog", capBunny:"Bunny", capDuck:"Duckling",
           bigEyebrow:"The big ones", bigTitle:"Larger toys", bigSub:"Bigger friends to hug and keep for years to come.",
           capBear:"Teddy bear", capLamb:"Little lamb", capCat:"Cat", capChar:"Little friend",
+          keyEyebrow:"Little extras", keyTitle:"Keychains", keySub:"Tiny charms to clip on a bag or your keys — a little handmade joy to carry everywhere.",
+          capKhHeart:"Heart", capKhCherries:"Cherries", capKhCharm:"Cat & heart", capKhPink:"Heart",
           aboutEyebrow:"Meet the maker", aboutTitle:"Hi, I'm Joanna.",
           aboutP1:"I'm a grandmother who creates beautiful, happy toys. Each stitch is crafted with love, for that comforting feel of an age gone by.",
           aboutP2:"No mass production here — each piece is unique and very special. A little character to love and appreciate for many years ahead, by you or anyone you'd like to please.",
@@ -301,15 +365,18 @@
         },
         es: {
           navShop:"Comprar en Etsy",
+          navFeat:"Baa Baa Black Sheep", navAmi:"Amigurumi", navBig:"Peluches grandes", navKey:"Llaveros", navAbout:"Quién los teje",
           heroEyebrow:"Amigurumi hecho a mano · Tenerife",
           heroTagline:"Pequeños amigos hechos a mano, cada uno tejido con amor.",
           heroSee:"Conoce a los amiguitos",
           featEyebrow:"Destacado en Etsy", featTitle:"Baa Baa Black Sheep", featText:"Una oveja de 30 cm hecha a mano con una campanita en una cinta — hilo suave para bebés, segura y tierna, lista para querer.",
-          f1t:"Hecho con amor", f2t:"Suaves y achuchables", f3t:"Perfectos para regalar", f4t:"Hechos por encargo",
+          f1t:"Hecho con amor", f2t:"Suaves y achuchables", f3t:"Perfectos para regalar", f4t:"Piezas únicas",
           amiEyebrow:"La colección", amiSub:"Pequeños amigos de crochet — cada uno único e irrepetible.",
           capOwl:"Búho", capCrab:"Cangrejo", capFrog:"Rana", capBunny:"Conejito", capDuck:"Patito",
           bigEyebrow:"Los grandes", bigTitle:"Peluches grandes", bigSub:"Amigos más grandes para abrazar y guardar durante años.",
           capBear:"Osito", capLamb:"Corderito", capCat:"Gato", capChar:"Amiguito",
+          keyEyebrow:"Pequeños detalles", keyTitle:"Llaveros", keySub:"Pequeños amuletos para tu bolso o tus llaves — una alegría hecha a mano para llevar a todas partes.",
+          capKhHeart:"Corazón", capKhCherries:"Cerezas", capKhCharm:"Gatito y corazón", capKhPink:"Corazón",
           aboutEyebrow:"Quién los teje", aboutTitle:"Hola, soy Joanna.",
           aboutP1:"Soy una abuela que crea juguetes bonitos y alegres. Cada puntada está hecha con amor, para ese consuelo cálido de los tiempos de antes.",
           aboutP2:"Aquí no hay producción en serie — cada pieza es única y muy especial. Un pequeño personaje para querer y disfrutar durante muchos años, tú o quien quieras hacer feliz.",
@@ -339,6 +406,28 @@
       document.querySelectorAll("[data-lang-set]").forEach(function(b){
         b.addEventListener("click",function(){applyLang(b.getAttribute("data-lang-set"));});
       });
+
+      // section sidebar (must run regardless of reduced-motion early-return below)
+      var menuBtn=document.getElementById("menuBtn"), sidebar=document.getElementById("sidebar"),
+          backdrop=document.getElementById("sbBackdrop"), sbClose=document.getElementById("sbClose"), bdT;
+      function openMenu(){ clearTimeout(bdT); backdrop.hidden=false; sidebar.classList.add("open"); requestAnimationFrame(function(){backdrop.classList.add("show");});
+        menuBtn.setAttribute("aria-expanded","true"); sidebar.setAttribute("aria-hidden","false"); document.body.classList.add("menu-open"); }
+      function closeMenu(){ sidebar.classList.remove("open"); backdrop.classList.remove("show"); menuBtn.setAttribute("aria-expanded","false");
+        sidebar.setAttribute("aria-hidden","true"); document.body.classList.remove("menu-open"); bdT=setTimeout(function(){backdrop.hidden=true;},340); }
+      if(menuBtn){
+        menuBtn.addEventListener("click",openMenu); sbClose.addEventListener("click",closeMenu); backdrop.addEventListener("click",closeMenu);
+        document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&sidebar.classList.contains("open")) closeMenu(); });
+        sidebar.querySelectorAll('a[href^="#"]').forEach(function(a){ a.addEventListener("click",closeMenu); });
+        var spyLinks={}; sidebar.querySelectorAll('.sidebar__nav a[href^="#"]').forEach(function(a){ spyLinks[a.getAttribute("href").slice(1)]=a; });
+        var spyTargets=Object.keys(spyLinks).map(function(id){return document.getElementById(id);}).filter(Boolean);
+        if("IntersectionObserver" in window && spyTargets.length){
+          var spy=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var id=e.target.id;
+            Object.keys(spyLinks).forEach(function(k){ spyLinks[k].setAttribute("aria-current", k===id?"true":"false"); }); } }); },
+            {rootMargin:"-45% 0px -50% 0px", threshold:0});
+          spyTargets.forEach(function(t){ spy.observe(t); });
+        }
+      }
+
       var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
       var els=document.querySelectorAll("[data-reveal]");
       if(reduce||!("IntersectionObserver" in window)){els.forEach(function(el){el.classList.add("in");});return;}
