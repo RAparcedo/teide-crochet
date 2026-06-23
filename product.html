@@ -6,7 +6,6 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#FCF7F2" />
   <title>Stitchnotbitch</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -40,6 +39,11 @@
     @media(min-width:50rem){.product__grid{grid-template-columns:1fr 1fr;}}
     .product__media{border-radius:22px;overflow:hidden;background:var(--blush-soft);box-shadow:0 18px 40px rgba(94,74,82,.14);border:5px solid #fff;}
     .product__media img{width:100%;height:auto;}
+    .product__thumbs{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.9rem;}
+    .product__thumbs button{padding:0;border:3px solid transparent;border-radius:14px;overflow:hidden;background:#fff;cursor:pointer;width:74px;height:74px;box-shadow:0 6px 16px rgba(94,74,82,.10);transition:border-color .18s,transform .18s;}
+    .product__thumbs button:hover{transform:translateY(-2px);}
+    .product__thumbs button[aria-current="true"]{border-color:var(--pink);}
+    .product__thumbs img{width:100%;height:100%;object-fit:cover;}
     .back{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:.9rem;color:var(--pink-deep);margin-bottom:1rem;}
     .back:hover{color:var(--ink);}
     .product__name{font-family:var(--font-display);font-weight:700;font-size:clamp(2rem,5vw,3rem);line-height:1.05;color:var(--ink);}
@@ -66,9 +70,12 @@
 
   <main class="product">
     <div class="wrap product__grid">
-      <figure class="product__media"><img id="pImg" src="" alt="" /></figure>
+      <div>
+        <figure class="product__media"><img id="pImg" src="" alt="" /></figure>
+        <div class="product__thumbs" id="pThumbs"></div>
+      </div>
       <div class="product__info">
-        <a class="back" href="index.html#amigurumi" data-c="back">← All the friends</a>
+        <a class="back" href="index.html#friends" data-c="back">← All the friends</a>
         <h1 class="product__name" id="pName"></h1>
         <p class="product__dims" id="pDims"></p>
         <p class="product__desc" id="pDesc"></p>
@@ -78,37 +85,61 @@
     </div>
   </main>
 
-  <footer class="foot"><div class="wrap">Stitchnotbitch · <span data-c="sample">Sample site</span></div></footer>
+  <footer class="foot"><div class="wrap">Stitchnotbitch · <span data-c="sample">Tenerife</span></div></footer>
 
   <script>
+    // Each friend mirrors her live Etsy listing — real photos, real shop link.
     var PRODUCTS = {
-      sheep: { photo:"photos/baa-baa-sheep.jpg", dims:"30 cm",
+      sheep: { gallery:["photos/p/sheep/01.jpg","photos/p/sheep/02.jpg","photos/p/sheep/03.jpg"], dims:"30 cm",
         name:{en:"Baa Baa Black Sheep", es:"Baa Baa Black Sheep"},
         desc:{en:"A 30 cm handmade sheep with a little bell on a pink ribbon. Made with soft baby yarn — safe and gentle, and ready to love. The perfect gift for any occasion.",
-              es:"Una oveja de 30 cm hecha a mano con una campanita en una cinta rosa. Hecha con hilo suave para bebés — segura y tierna, lista para querer. El regalo perfecto para cualquier ocasión."}, etsy:"#" },
-      owl:{ photo:"photos/owl.jpg", name:{en:"Owl",es:"Búho"} },
-      crab:{ photo:"photos/crab.jpg", name:{en:"Crab",es:"Cangrejo"} },
-      frog:{ photo:"photos/frog.jpg", name:{en:"Frog",es:"Rana"} },
-      bunny:{ photo:"photos/bunny.jpg", name:{en:"Bunny",es:"Conejito"} },
-      duck:{ photo:"photos/duck.jpg", name:{en:"Duckling",es:"Patito"} },
-      bear:{ photo:"photos/bear.jpg", name:{en:"Teddy bear",es:"Osito"} },
-      lamb:{ photo:"photos/lamb.jpg", name:{en:"Little lamb",es:"Corderito"} },
-      cat:{ photo:"photos/cat.jpg", name:{en:"Cat",es:"Gato"} },
-      character:{ photo:"photos/character.jpg", name:{en:"Little friend",es:"Amiguito"} },
-      khheart:{ photo:"photos/kc-heart-coral.jpg", name:{en:"Heart keychain",es:"Llavero corazón"} },
-      khcherries:{ photo:"photos/kc-cherries.jpg", name:{en:"Cherries keychain",es:"Llavero cerezas"} },
-      khcharm:{ photo:"photos/kc-charm.jpg", name:{en:"Cat & heart charm",es:"Llavero gatito y corazón"} },
-      khpink:{ photo:"photos/kc-heart-pink.jpg", name:{en:"Heart keychain",es:"Llavero corazón"} }
+              es:"Una oveja de 30 cm hecha a mano con una campanita en una cinta rosa. Hecha con hilo suave para bebés — segura y tierna, lista para querer. El regalo perfecto para cualquier ocasión."},
+        etsy:"https://www.etsy.com/listing/4521180929/baa-baa-black-sheep-crochet-toy-handmade" },
+      "thin-lizzie": { gallery:["photos/p/thin-lizzie/01.jpg","photos/p/thin-lizzie/02.jpg","photos/p/thin-lizzie/03.jpg"], dims:"25 cm",
+        name:{en:"Thin Lizzie", es:"Thin Lizzie"},
+        desc:{en:"A 25 cm handmade amigurumi doll in a soft bamboo, silk & cashmere blend. An heirloom-quality friend — lovely as nursery decor or a special gift for a little one.",
+              es:"Una muñeca amigurumi de 25 cm hecha a mano en una mezcla suave de bambú, seda y cachemir. Una amiga de calidad para toda la vida — preciosa como decoración o un regalo especial."},
+        etsy:"https://www.etsy.com/listing/4526130897/thin-lizzie-crochet-doll-25-cm-amigurumi" },
+      dolly: { gallery:["photos/p/dolly/01.jpg","photos/p/dolly/02.jpg"],
+        name:{en:"Dolly Daydream", es:"Dolly Daydream"},
+        desc:{en:"A sweet handmade crochet dolly with her own little outfit — soft, huggable and entirely one of a kind.",
+              es:"Una dulce muñeca de crochet hecha a mano con su propio conjunto — suave, achuchable y completamente única."},
+        etsy:"https://www.etsy.com/listing/4526086281/dolly-daydream-crochet-dolly" },
+      pig: { gallery:["photos/p/pig/01.jpg","photos/p/pig/02.jpg"], dims:"30 cm",
+        name:{en:"Love Pig", es:"Cerdito Love"},
+        desc:{en:"A 30 cm handmade crochet pig in a soft bamboo, silk & cashmere blend, holding a little love heart. A cuddly, cute gift for the nursery.",
+              es:"Un cerdito de crochet de 30 cm hecho a mano en una mezcla suave de bambú, seda y cachemir, con un corazoncito. Un regalo tierno y adorable para el cuarto del bebé."},
+        etsy:"https://www.etsy.com/listing/4525415509/handmade-crochet-pig-plush-toy-30-cm" },
+      bunny: { gallery:["photos/p/bunny/01.jpg"],
+        name:{en:"Candy Bunny", es:"Conejito Candy"},
+        desc:{en:"A soft pastel candy bunny rabbit, handmade and ready for hugs. Each one is unique.",
+              es:"Un suave conejito en tonos pastel, hecho a mano y listo para abrazos. Cada uno es único."},
+        etsy:"https://www.etsy.com/listing/4525079899/pastel-candy-bunny-rabbit" },
+      lion: { gallery:["photos/p/lion/01.jpg","photos/p/lion/02.jpg","photos/p/lion/03.jpg","photos/p/lion/04.jpg"],
+        name:{en:"Lion", es:"León"},
+        desc:{en:"A handmade crochet lion cuddly toy with a soft mane — brave, friendly and very huggable.",
+              es:"Un león de crochet hecho a mano con una melena suave — valiente, simpático y muy achuchable."},
+        etsy:"https://www.etsy.com/listing/4525075694/handmade-crochet-lion-cuddly-toy" },
+      teddy: { gallery:["photos/p/teddy/01.jpg","photos/p/teddy/02.jpg"],
+        name:{en:"Blue Teddy", es:"Osito Azul"},
+        desc:{en:"A classic handmade blue teddy bear, soft and cuddly — a friend to keep for years.",
+              es:"Un clásico osito azul hecho a mano, suave y achuchable — un amigo para guardar durante años."},
+        etsy:"https://www.etsy.com/listing/4522119453/blue-teddy-bear" },
+      snail: { gallery:["photos/p/snail/01.jpg","photos/p/snail/02.jpg","photos/p/snail/03.jpg"],
+        name:{en:"Snail", es:"Caracol"},
+        desc:{en:"A handmade crochet snail — a soft baby & Montessori counting toy for early learning and sensory play. Gentle, colourful and fun.",
+              es:"Un caracol de crochet hecho a mano — un suave juguete para bebés y de conteo Montessori para el aprendizaje temprano y el juego sensorial. Tierno, colorido y divertido."},
+        etsy:"https://www.etsy.com/listing/4522109193/crochet-snail-toy-montessori-counting" }
     };
     var DESC_DEFAULT = {
       en:"A one-of-a-kind handmade friend, crocheted with love. Each little character is unique — there's only one like it.",
       es:"Un amigo único hecho a mano, tejido con amor. Cada personaje es irrepetible — no hay otro igual."
     };
     var CHROME = {
-      en:{ shop:"Shop on Etsy", back:"← All the friends", dimsLabel:"Approx. size", sample:"Sample site",
-           note:"More photos & details coming soon — and you'll be able to buy this one right on Etsy.", notFound:"Friend not found." },
-      es:{ shop:"Comprar en Etsy", back:"← Todos los amiguitos", dimsLabel:"Tamaño aprox.", sample:"Sitio de muestra",
-           note:"Pronto más fotos y detalles — y podrás comprarlo directamente en Etsy.", notFound:"Amiguito no encontrado." }
+      en:{ shop:"Shop on Etsy", back:"← All the friends", dimsLabel:"Approx. size", sample:"Tenerife",
+           note:"Each friend is one of a kind — when it's gone, it's gone. Tap through to see it on Etsy.", notFound:"Friend not found." },
+      es:{ shop:"Comprar en Etsy", back:"← Todos los amiguitos", dimsLabel:"Tamaño aprox.", sample:"Tenerife",
+           note:"Cada amiguito es único — cuando se va, se va. Toca para verlo en Etsy.", notFound:"Amiguito no encontrado." }
     };
     function getLang(){ try{ var l=localStorage.getItem("stitch-lang"); return (l==="es")?"es":"en"; }catch(e){ return "en"; } }
     function render(){
@@ -118,12 +149,29 @@
       var id=new URLSearchParams(location.search).get("id");
       var p=PRODUCTS[id];
       if(!p){ document.getElementById("pName").textContent=c.notFound; document.getElementById("pImg").style.display="none"; return; }
-      var img=document.getElementById("pImg"); img.src=p.photo; img.alt=p.name[l];
+      var gal=p.gallery||[p.photo]; var img=document.getElementById("pImg");
+      img.src=gal[0]; img.alt=p.name[l];
+      var thumbs=document.getElementById("pThumbs"); thumbs.innerHTML="";
+      if(gal.length>1){
+        gal.forEach(function(src,idx){
+          var b=document.createElement("button"); b.type="button";
+          b.setAttribute("aria-label",p.name[l]+" — photo "+(idx+1));
+          b.setAttribute("aria-current", idx===0?"true":"false");
+          var ti=document.createElement("img"); ti.src=src; ti.alt=""; ti.loading="lazy"; b.appendChild(ti);
+          b.addEventListener("click",function(){
+            img.src=src;
+            thumbs.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-current","false");});
+            b.setAttribute("aria-current","true");
+          });
+          thumbs.appendChild(b);
+        });
+      }
       document.getElementById("pName").textContent=p.name[l];
       document.getElementById("pDesc").textContent=(p.desc&&p.desc[l])?p.desc[l]:DESC_DEFAULT[l];
       var dims=document.getElementById("pDims");
       if(p.dims){ dims.textContent=c.dimsLabel+": "+p.dims; dims.style.display=""; } else { dims.style.display="none"; }
-      var etsy=p.etsy||"#"; document.getElementById("pEtsy").href=etsy; document.getElementById("navEtsy").href=etsy;
+      var etsy=p.etsy||"https://www.etsy.com/shop/stitchnotbitch";
+      ["pEtsy","navEtsy"].forEach(function(id){ var a=document.getElementById(id); a.href=etsy; a.target="_blank"; a.rel="noopener"; });
       document.title=p.name[l]+" · Stitchnotbitch";
     }
     document.querySelectorAll("[data-lang-set]").forEach(function(b){
