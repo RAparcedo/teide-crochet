@@ -119,6 +119,12 @@
     /* gallery grid */
     .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(0.9rem,2vw,1.5rem); }
     @media (min-width:46rem){ .grid--5 { grid-template-columns:repeat(3,1fr); } .grid--4 { grid-template-columns:repeat(4,1fr); } }
+    /* masonry gallery — full poster covers, no crop */
+    .masonry { column-count:2; column-gap:clamp(0.9rem,2vw,1.5rem); }
+    @media (min-width:46rem){ .masonry--5 { column-count:3; } }
+    .masonry .card { display:inline-block; width:100%; margin-bottom:clamp(0.9rem,2vw,1.5rem); break-inside:avoid; -webkit-column-break-inside:avoid; }
+    .masonry .card__img { aspect-ratio:auto; }
+    .masonry .card__img img { height:auto; object-fit:contain; }
     .card { display:block; background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 10px 26px rgba(94,74,82,.09); transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease; }
     .card__cap { position:relative; }
     .card__cap::after { content:"›"; position:absolute; right:0.9rem; top:50%; transform:translateY(-50%); color:var(--pink); font-weight:700; opacity:0; transition:opacity .2s, right .2s; }
@@ -239,9 +245,9 @@
           <h2 class="display section__title" data-i18n="dollsTitle">Handmade dolls</h2>
           <p class="section__sub" data-i18n="dollsSub">Heirloom-quality dolls in a soft bamboo, silk &amp; cashmere blend — each one truly one of a kind.</p>
         </div>
-        <div class="grid" data-reveal>
-          <a class="card" href="product.html?id=thin-lizzie"><div class="card__img"><img src="photos/p/thin-lizzie/card.jpg" alt="Thin Lizzie — handmade crochet doll, 25 cm" loading="lazy" /></div><div class="card__cap" data-i18n="capLizzie">Thin Lizzie</div></a>
-          <a class="card" href="product.html?id=dolly"><div class="card__img"><img src="photos/p/dolly/card.jpg" alt="Dolly Daydream — handmade crochet dolly" loading="lazy" /></div><div class="card__cap" data-i18n="capDolly">Dolly Daydream</div></a>
+        <div class="masonry" data-reveal>
+          <a class="card" href="product.html?id=thin-lizzie"><div class="card__img"><img src="photos/p/thin-lizzie/cover.jpg" alt="Thin Lizzie — handmade crochet doll, 25 cm" loading="lazy" /></div><div class="card__cap" data-i18n="capLizzie">Thin Lizzie</div></a>
+          <a class="card" href="product.html?id=dolly"><div class="card__img"><img src="photos/p/dolly/cover.jpg" alt="Dolly Daydream — handmade crochet dolly" loading="lazy" /></div><div class="card__cap" data-i18n="capDolly">Dolly Daydream</div></a>
         </div>
       </div>
     </section>
@@ -254,12 +260,12 @@
           <h2 class="display section__title">Amigurumi</h2>
           <p class="section__sub" data-i18n="amiSub">Little crocheted friends — each one unique and one of a kind.</p>
         </div>
-        <div class="grid grid--5" data-reveal>
-          <a class="card" href="product.html?id=pig"><div class="card__img"><img src="photos/p/pig/card.jpg" alt="Love Pig — handmade crochet pig plush, 30 cm" loading="lazy" /></div><div class="card__cap" data-i18n="capPig">Love Pig</div></a>
-          <a class="card" href="product.html?id=bunny"><div class="card__img"><img src="photos/p/bunny/card.jpg" alt="Pastel candy bunny rabbit" loading="lazy" /></div><div class="card__cap" data-i18n="capBunny">Candy Bunny</div></a>
-          <a class="card" href="product.html?id=lion"><div class="card__img"><img src="photos/p/lion/card.jpg" alt="Handmade crochet lion cuddly toy" loading="lazy" /></div><div class="card__cap" data-i18n="capLion">Lion</div></a>
-          <a class="card" href="product.html?id=teddy"><div class="card__img"><img src="photos/p/teddy/card.jpg" alt="Blue teddy bear" loading="lazy" /></div><div class="card__cap" data-i18n="capBear">Blue Teddy</div></a>
-          <a class="card" href="product.html?id=snail"><div class="card__img"><img src="photos/p/snail/card.jpg" alt="Crochet snail — Montessori counting toy" loading="lazy" /></div><div class="card__cap" data-i18n="capSnail">Snail</div></a>
+        <div class="masonry masonry--5" data-reveal>
+          <a class="card" href="product.html?id=pig"><div class="card__img"><img src="photos/p/pig/cover.jpg" alt="Love Pig — handmade crochet pig plush, 30 cm" loading="lazy" /></div><div class="card__cap" data-i18n="capPig">Love Pig</div></a>
+          <a class="card" href="product.html?id=bunny"><div class="card__img"><img src="photos/p/bunny/cover.jpg" alt="Pastel candy bunny rabbit" loading="lazy" /></div><div class="card__cap" data-i18n="capBunny">Candy Bunny</div></a>
+          <a class="card" href="product.html?id=lion"><div class="card__img"><img src="photos/p/lion/cover.jpg" alt="Handmade crochet lion cuddly toy" loading="lazy" /></div><div class="card__cap" data-i18n="capLion">Lion</div></a>
+          <a class="card" href="product.html?id=teddy"><div class="card__img"><img src="photos/p/teddy/cover.jpg" alt="Blue teddy bear" loading="lazy" /></div><div class="card__cap" data-i18n="capBear">Blue Teddy</div></a>
+          <a class="card" href="product.html?id=snail"><div class="card__img"><img src="photos/p/snail/cover.jpg" alt="Crochet snail — Montessori counting toy" loading="lazy" /></div><div class="card__cap" data-i18n="capSnail">Snail</div></a>
         </div>
       </div>
     </section>
