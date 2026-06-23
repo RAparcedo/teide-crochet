@@ -9,10 +9,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#F7DEE3" />
   <title>Stitchnotbitch · Tiny handmade friends · Tenerife</title>
-  <meta name="description" content="Stitchnotbitch — tiny handmade amigurumi friends, each one stitched with love by Joanna. (Sample site.)" />
+  <meta name="description" content="Stitchnotbitch — tiny handmade amigurumi friends, each one stitched with love by Joanna in Tenerife. Browse the collection and shop on Etsy." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -84,8 +83,8 @@
       .secnav a[aria-current="true"]::before { content:""; position:absolute; left:0; top:0.6rem; bottom:0.6rem; width:3px; border-radius:3px; background:var(--pink); }
     }
     /* sticky-header offset so in-page anchors don't hide under the bars */
-    #featured, #amigurumi, #larger, #keychains, #about { scroll-margin-top:7.5rem; }
-    @media (min-width:64rem){ #featured, #amigurumi, #larger, #keychains, #about { scroll-margin-top:5.5rem; } }
+    #featured, #dolls, #friends, #about { scroll-margin-top:7.5rem; }
+    @media (min-width:64rem){ #featured, #dolls, #friends, #about { scroll-margin-top:5.5rem; } }
 
     /* hero */
     .hero { padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(3rem,7vw,5rem); text-align:center; }
@@ -178,9 +177,8 @@
   <nav class="secnav" id="secnav" aria-label="Sections">
     <span class="secnav__label" data-i18n="navLabel">Sections</span>
     <a href="#featured" data-i18n="navFeat">Baa Baa Black Sheep</a>
-    <a href="#amigurumi" data-i18n="navAmi">Amigurumi</a>
-    <a href="#larger" data-i18n="navBig">Larger toys</a>
-    <a href="#keychains" data-i18n="navKey">Keychains</a>
+    <a href="#dolls" data-i18n="navDolls">Dolls</a>
+    <a href="#friends" data-i18n="navAmi">Amigurumi</a>
     <a href="#about" data-i18n="navAbout">Meet the maker</a>
   </nav>
 
@@ -193,7 +191,7 @@
         <p class="hero__tagline" data-i18n="heroTagline">Tiny handmade friends, each one stitched with love.</p>
         <div class="hero__cta">
           <a class="btn btn--fill" href="#" data-etsy data-i18n="navShop">Shop on Etsy</a>
-          <a class="btn btn--line" href="#amigurumi" data-i18n="heroSee">Meet the friends</a>
+          <a class="btn btn--line" href="#friends" data-i18n="heroSee">Meet the friends</a>
         </div>
       </div>
     </section>
@@ -223,18 +221,33 @@
     <!-- featured item -->
     <section class="section" id="featured">
       <div class="wrap featured__in">
-        <a class="featured__card" href="product.html?id=sheep" data-reveal><img src="photos/baa-baa-sheep.jpg" alt="Baa Baa Black Sheep — handmade crochet toy, 30 cm with a little bell" /></a>
+        <a class="featured__card" href="product.html?id=sheep" data-reveal><img src="photos/p/sheep/card.jpg" alt="Baa Baa Black Sheep — handmade crochet toy, 30 cm with a little bell" /></a>
         <div class="featured__body" data-reveal>
           <p class="eyebrow" data-i18n="featEyebrow">Featured on Etsy</p>
           <h2 class="display section__title" style="margin-bottom:0.8rem" data-i18n="featTitle">Baa Baa Black Sheep</h2>
           <p class="section__sub" data-i18n="featText">A 30 cm handmade sheep with a little bell on a ribbon — soft baby yarn, safe and gentle, and ready to love.</p>
-          <a class="btn btn--fill" href="#" data-etsy data-i18n="navShop" style="margin-top:1.3rem">Shop on Etsy</a>
+          <a class="btn btn--fill" href="product.html?id=sheep" data-i18n="featCta" style="margin-top:1.3rem">See this friend</a>
         </div>
       </div>
     </section>
 
-    <!-- amigurumi -->
-    <section class="section section--blush" id="amigurumi">
+    <!-- dolls (premium bamboo-silk-cashmere line) -->
+    <section class="section section--blush" id="dolls">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <p class="eyebrow" data-i18n="dollsEyebrow">The dolls</p>
+          <h2 class="display section__title" data-i18n="dollsTitle">Handmade dolls</h2>
+          <p class="section__sub" data-i18n="dollsSub">Heirloom-quality dolls in a soft bamboo, silk &amp; cashmere blend — each one truly one of a kind.</p>
+        </div>
+        <div class="grid" data-reveal>
+          <a class="card" href="product.html?id=thin-lizzie"><div class="card__img"><img src="photos/p/thin-lizzie/card.jpg" alt="Thin Lizzie — handmade crochet doll, 25 cm" loading="lazy" /></div><div class="card__cap" data-i18n="capLizzie">Thin Lizzie</div></a>
+          <a class="card" href="product.html?id=dolly"><div class="card__img"><img src="photos/p/dolly/card.jpg" alt="Dolly Daydream — handmade crochet dolly" loading="lazy" /></div><div class="card__cap" data-i18n="capDolly">Dolly Daydream</div></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- amigurumi friends -->
+    <section class="section" id="friends">
       <div class="wrap">
         <div class="section__head" data-reveal>
           <p class="eyebrow" data-i18n="amiEyebrow">The collection</p>
@@ -242,45 +255,11 @@
           <p class="section__sub" data-i18n="amiSub">Little crocheted friends — each one unique and one of a kind.</p>
         </div>
         <div class="grid grid--5" data-reveal>
-          <a class="card" href="product.html?id=owl"><div class="card__img"><img src="photos/owl.jpg" alt="Crocheted owl" loading="lazy" /></div><div class="card__cap" data-i18n="capOwl">Owl</div></a>
-          <a class="card" href="product.html?id=cat"><div class="card__img"><img src="photos/cat.jpg" alt="Crocheted cat" loading="lazy" /></div><div class="card__cap" data-i18n="capCat">Cat</div></a>
-          <a class="card" href="product.html?id=frog"><div class="card__img"><img src="photos/frog.jpg" alt="Crocheted frog" loading="lazy" /></div><div class="card__cap" data-i18n="capFrog">Frog</div></a>
-          <a class="card" href="product.html?id=bunny"><div class="card__img"><img src="photos/bunny.jpg" alt="Crocheted bunny" loading="lazy" /></div><div class="card__cap" data-i18n="capBunny">Bunny</div></a>
-          <a class="card" href="product.html?id=duck"><div class="card__img"><img src="photos/duck.jpg" alt="Crocheted duckling" loading="lazy" /></div><div class="card__cap" data-i18n="capDuck">Duckling</div></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- larger toys -->
-    <section class="section" id="larger">
-      <div class="wrap">
-        <div class="section__head" data-reveal>
-          <p class="eyebrow" data-i18n="bigEyebrow">The big ones</p>
-          <h2 class="display section__title" data-i18n="bigTitle">Larger toys</h2>
-          <p class="section__sub" data-i18n="bigSub">Bigger friends to hug and keep for years to come.</p>
-        </div>
-        <div class="grid grid--4" data-reveal>
-          <a class="card" href="product.html?id=bear"><div class="card__img"><img src="photos/bear.jpg" alt="Blue teddy bear" loading="lazy" /></div><div class="card__cap" data-i18n="capBear">Teddy bear</div></a>
-          <a class="card" href="product.html?id=lamb"><div class="card__img"><img src="photos/lamb.jpg" alt="Little lamb with a scarf" loading="lazy" /></div><div class="card__cap" data-i18n="capLamb">Little lamb</div></a>
-          <a class="card" href="product.html?id=crab"><div class="card__img"><img src="photos/crab.jpg" alt="Crocheted crab" loading="lazy" /></div><div class="card__cap" data-i18n="capCrab">Crab</div></a>
-          <a class="card" href="product.html?id=character"><div class="card__img"><img src="photos/character.jpg" alt="Little crocheted character" loading="lazy" /></div><div class="card__cap" data-i18n="capChar">Little friend</div></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- keychains -->
-    <section class="section" id="keychains">
-      <div class="wrap">
-        <div class="section__head" data-reveal>
-          <p class="eyebrow" data-i18n="keyEyebrow">Little extras</p>
-          <h2 class="display section__title" data-i18n="keyTitle">Keychains</h2>
-          <p class="section__sub" data-i18n="keySub">Tiny charms to clip on a bag or your keys — a little handmade joy to carry everywhere.</p>
-        </div>
-        <div class="grid grid--4" data-reveal>
-          <a class="card" href="product.html?id=khheart"><div class="card__img"><img src="photos/kc-heart-coral.jpg" alt="Crocheted heart keychain" loading="lazy" /></div><div class="card__cap" data-i18n="capKhHeart">Heart</div></a>
-          <a class="card" href="product.html?id=khcherries"><div class="card__img"><img src="photos/kc-cherries.jpg" alt="Crocheted cherries keychain" loading="lazy" /></div><div class="card__cap" data-i18n="capKhCherries">Cherries</div></a>
-          <a class="card" href="product.html?id=khcharm"><div class="card__img"><img src="photos/kc-charm.jpg" alt="Crocheted cat and heart charm keychain" loading="lazy" /></div><div class="card__cap" data-i18n="capKhCharm">Cat &amp; heart</div></a>
-          <a class="card" href="product.html?id=khpink"><div class="card__img"><img src="photos/kc-heart-pink.jpg" alt="Pink crocheted heart keychain" loading="lazy" /></div><div class="card__cap" data-i18n="capKhPink">Heart</div></a>
+          <a class="card" href="product.html?id=pig"><div class="card__img"><img src="photos/p/pig/card.jpg" alt="Love Pig — handmade crochet pig plush, 30 cm" loading="lazy" /></div><div class="card__cap" data-i18n="capPig">Love Pig</div></a>
+          <a class="card" href="product.html?id=bunny"><div class="card__img"><img src="photos/p/bunny/card.jpg" alt="Pastel candy bunny rabbit" loading="lazy" /></div><div class="card__cap" data-i18n="capBunny">Candy Bunny</div></a>
+          <a class="card" href="product.html?id=lion"><div class="card__img"><img src="photos/p/lion/card.jpg" alt="Handmade crochet lion cuddly toy" loading="lazy" /></div><div class="card__cap" data-i18n="capLion">Lion</div></a>
+          <a class="card" href="product.html?id=teddy"><div class="card__img"><img src="photos/p/teddy/card.jpg" alt="Blue teddy bear" loading="lazy" /></div><div class="card__cap" data-i18n="capBear">Blue Teddy</div></a>
+          <a class="card" href="product.html?id=snail"><div class="card__img"><img src="photos/p/snail/card.jpg" alt="Crochet snail — Montessori counting toy" loading="lazy" /></div><div class="card__cap" data-i18n="capSnail">Snail</div></a>
         </div>
       </div>
     </section>
@@ -321,60 +300,58 @@
         </nav>
       </div>
       <p class="foot__fine">
-        <span data-i18n="footFine">Tiny handmade friends, made with love in Tenerife. · Sample site</span>
-        <span class="ptag" data-i18n="footTag">placeholder — pending her review</span>
+        <span data-i18n="footFine">Tiny handmade friends, made with love in Tenerife.</span>
       </p>
     </div>
   </footer>
 
   <script>
     (function () {
+      // real Etsy shop — wire every [data-etsy] link
+      var SHOP = "https://www.etsy.com/shop/stitchnotbitch";
+      document.querySelectorAll("[data-etsy]").forEach(function(a){
+        a.href = SHOP; a.target = "_blank"; a.rel = "noopener";
+      });
       var DICT = {
         en: {
           navShop:"Shop on Etsy",
-          navLabel:"Sections", navFeat:"Baa Baa Black Sheep", navAmi:"Amigurumi", navBig:"Larger toys", navKey:"Keychains", navAbout:"Meet the maker",
+          navLabel:"Sections", navFeat:"Baa Baa Black Sheep", navDolls:"Dolls", navAmi:"Amigurumi", navAbout:"Meet the maker",
           heroEyebrow:"Handmade amigurumi · Tenerife",
           heroTagline:"Tiny handmade friends, each one stitched with love.",
           heroSee:"Meet the friends",
-          featEyebrow:"Featured on Etsy", featTitle:"Baa Baa Black Sheep", featText:"A 30 cm handmade sheep with a little bell on a ribbon — soft baby yarn, safe and gentle, and ready to love.",
+          featEyebrow:"Featured on Etsy", featTitle:"Baa Baa Black Sheep", featText:"A 30 cm handmade sheep with a little bell on a ribbon — soft baby yarn, safe and gentle, and ready to love.", featCta:"See this friend",
           f1t:"Handmade with love", f2t:"Soft & cuddly", f3t:"Perfect for gifting", f4t:"One of a kind",
+          dollsEyebrow:"The dolls", dollsTitle:"Handmade dolls", dollsSub:"Heirloom-quality dolls in a soft bamboo, silk & cashmere blend — each one truly one of a kind.",
+          capLizzie:"Thin Lizzie", capDolly:"Dolly Daydream",
           amiEyebrow:"The collection", amiSub:"Little crocheted friends — each one unique and one of a kind.",
-          capOwl:"Owl", capCrab:"Crab", capFrog:"Frog", capBunny:"Bunny", capDuck:"Duckling",
-          bigEyebrow:"The big ones", bigTitle:"Larger toys", bigSub:"Bigger friends to hug and keep for years to come.",
-          capBear:"Teddy bear", capLamb:"Little lamb", capCat:"Cat", capChar:"Little friend",
-          keyEyebrow:"Little extras", keyTitle:"Keychains", keySub:"Tiny charms to clip on a bag or your keys — a little handmade joy to carry everywhere.",
-          capKhHeart:"Heart", capKhCherries:"Cherries", capKhCharm:"Cat & heart", capKhPink:"Heart",
+          capPig:"Love Pig", capBunny:"Candy Bunny", capLion:"Lion", capBear:"Blue Teddy", capSnail:"Snail",
           aboutEyebrow:"Meet the maker", aboutTitle:"Hi, I'm Joanna.",
           aboutP1:"I'm a grandmother who creates beautiful, happy toys. Each stitch is crafted with love, for that comforting feel of an age gone by.",
           aboutP2:"No mass production here — each piece is unique and very special. A little character to love and appreciate for many years ahead, by you or anyone you'd like to please.",
           aboutP3:"Thank you for looking today. I look forward to making you and your loved ones happy too.",
           bandEyebrow:"The shop", bandTitle:"Every friend is one of a kind. <span class=\"script\">Find them on Etsy.</span>",
           bandNote:"Got an idea for a new friend? Leave it in the comments — I love hearing them.",
-          footFine:"Tiny handmade friends, made with love in Tenerife. · Sample site",
-          footTag:"placeholder — pending her review"
+          footFine:"Tiny handmade friends, made with love in Tenerife."
         },
         es: {
           navShop:"Comprar en Etsy",
-          navLabel:"Secciones", navFeat:"Baa Baa Black Sheep", navAmi:"Amigurumi", navBig:"Peluches grandes", navKey:"Llaveros", navAbout:"Quién los teje",
+          navLabel:"Secciones", navFeat:"Baa Baa Black Sheep", navDolls:"Muñecas", navAmi:"Amigurumi", navAbout:"Quién los teje",
           heroEyebrow:"Amigurumi hecho a mano · Tenerife",
           heroTagline:"Pequeños amigos hechos a mano, cada uno tejido con amor.",
           heroSee:"Conoce a los amiguitos",
-          featEyebrow:"Destacado en Etsy", featTitle:"Baa Baa Black Sheep", featText:"Una oveja de 30 cm hecha a mano con una campanita en una cinta — hilo suave para bebés, segura y tierna, lista para querer.",
+          featEyebrow:"Destacado en Etsy", featTitle:"Baa Baa Black Sheep", featText:"Una oveja de 30 cm hecha a mano con una campanita en una cinta — hilo suave para bebés, segura y tierna, lista para querer.", featCta:"Ver este amiguito",
           f1t:"Hecho con amor", f2t:"Suaves y achuchables", f3t:"Perfectos para regalar", f4t:"Piezas únicas",
+          dollsEyebrow:"Las muñecas", dollsTitle:"Muñecas hechas a mano", dollsSub:"Muñecas de calidad de toda la vida en una mezcla suave de bambú, seda y cachemir — cada una verdaderamente única.",
+          capLizzie:"Thin Lizzie", capDolly:"Dolly Daydream",
           amiEyebrow:"La colección", amiSub:"Pequeños amigos de crochet — cada uno único e irrepetible.",
-          capOwl:"Búho", capCrab:"Cangrejo", capFrog:"Rana", capBunny:"Conejito", capDuck:"Patito",
-          bigEyebrow:"Los grandes", bigTitle:"Peluches grandes", bigSub:"Amigos más grandes para abrazar y guardar durante años.",
-          capBear:"Osito", capLamb:"Corderito", capCat:"Gato", capChar:"Amiguito",
-          keyEyebrow:"Pequeños detalles", keyTitle:"Llaveros", keySub:"Pequeños amuletos para tu bolso o tus llaves — una alegría hecha a mano para llevar a todas partes.",
-          capKhHeart:"Corazón", capKhCherries:"Cerezas", capKhCharm:"Gatito y corazón", capKhPink:"Corazón",
+          capPig:"Cerdito Love", capBunny:"Conejito Candy", capLion:"León", capBear:"Osito Azul", capSnail:"Caracol",
           aboutEyebrow:"Quién los teje", aboutTitle:"Hola, soy Joanna.",
           aboutP1:"Soy una abuela que crea juguetes bonitos y alegres. Cada puntada está hecha con amor, para ese consuelo cálido de los tiempos de antes.",
           aboutP2:"Aquí no hay producción en serie — cada pieza es única y muy especial. Un pequeño personaje para querer y disfrutar durante muchos años, tú o quien quieras hacer feliz.",
           aboutP3:"Gracias por mirar hoy. Me hará mucha ilusión haceros felices a ti y a los tuyos también.",
           bandEyebrow:"La tienda", bandTitle:"Cada amigo es único. <span class=\"script\">Encuéntralos en Etsy.</span>",
           bandNote:"¿Tienes una idea para un nuevo amiguito? Déjala en los comentarios — me encanta leerlas.",
-          footFine:"Pequeños amigos hechos a mano, con amor, en Tenerife. · Sitio de muestra",
-          footTag:"placeholder — pendiente de su revisión"
+          footFine:"Pequeños amigos hechos a mano, con amor, en Tenerife."
         }
       };
       var KEY = "stitch-lang";
