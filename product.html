@@ -8,9 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#FCF7F2" />
   <title>Stitchnotbitch</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <meta name="description" content="A handmade crochet friend by Stitchnotbitch — made with love in Tenerife, available on Etsy." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="Stitchnotbitch" />
+  <meta property="og:image" content="https://stitchnotbitch.com/photos/banner.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preload" href="fonts/nunito-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/quicksand-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="fonts.css" />
   <style>
     :root{ --paper:#FCF7F2; --blush:#F7DEE3; --blush-soft:#FBEEF0; --blush-deep:#F2C9D2; --pink:#E58AA0; --pink-deep:#D26F89;
       --ink:#5E4A52; --ink-soft:rgba(94,74,82,.66); --ink-faint:rgba(94,74,82,.42); --hairline:rgba(94,74,82,.13);
@@ -52,6 +58,7 @@
     .product__cta{margin-top:1.6rem;}
     .product__note{color:var(--ink-faint);font-size:.82rem;margin-top:1.2rem;max-width:38ch;}
     .foot{border-top:1px solid var(--hairline);padding:2rem 0;text-align:center;color:var(--ink-faint);font-size:.78rem;}
+    .foot__legal{margin-top:.5rem;} .foot__legal a{color:var(--pink-deep);font-weight:600;} .foot__legal a:hover{color:var(--ink);}
   </style>
 </head>
 <body>
@@ -85,7 +92,14 @@
     </div>
   </main>
 
-  <footer class="foot"><div class="wrap">Stitchnotbitch · <span data-c="sample">Tenerife</span></div></footer>
+  <footer class="foot"><div class="wrap">
+    <div>Stitchnotbitch · <span data-c="sample">Tenerife</span></div>
+    <div class="foot__legal">
+      <a href="legal.html#aviso" data-c="legal">Legal notice</a> ·
+      <a href="legal.html#privacidad" data-c="privacy">Privacy</a> ·
+      <a href="legal.html#cookies">Cookies</a>
+    </div>
+  </div></footer>
 
   <script>
     // Each friend mirrors her live Etsy listing — real photos, real shop link.
@@ -146,9 +160,9 @@
       es:"Un amigo único hecho a mano, tejido con amor. Cada personaje es irrepetible — no hay otro igual."
     };
     var CHROME = {
-      en:{ shop:"Shop on Etsy", back:"← All the friends", dimsLabel:"Approx. size", sample:"Tenerife",
+      en:{ shop:"Shop on Etsy", back:"← All the friends", dimsLabel:"Approx. size", sample:"Tenerife", legal:"Legal notice", privacy:"Privacy",
            note:"Each friend is one of a kind — when it's gone, it's gone. Tap through to see it on Etsy.", notFound:"Friend not found." },
-      es:{ shop:"Comprar en Etsy", back:"← Todos los amiguitos", dimsLabel:"Tamaño aprox.", sample:"Tenerife",
+      es:{ shop:"Comprar en Etsy", back:"← Todos los amiguitos", dimsLabel:"Tamaño aprox.", sample:"Tenerife", legal:"Aviso legal", privacy:"Privacidad",
            note:"Cada amiguito es único — cuando se va, se va. Toca para verlo en Etsy.", notFound:"Amiguito no encontrado." }
     };
     function getLang(){ try{ var l=localStorage.getItem("stitch-lang"); return (l==="es")?"es":"en"; }catch(e){ return "en"; } }
