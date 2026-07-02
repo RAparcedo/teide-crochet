@@ -12,9 +12,23 @@
   <meta name="theme-color" content="#F7DEE3" />
   <title>Stitchnotbitch · Tiny handmade friends · Tenerife</title>
   <meta name="description" content="Stitchnotbitch — tiny handmade amigurumi friends, each one stitched with love by Joanna in Tenerife. Browse the collection and shop on Etsy." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&family=Nunito:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="canonical" href="https://stitchnotbitch.com/" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Stitchnotbitch" />
+  <meta property="og:title" content="Stitchnotbitch · Tiny handmade friends" />
+  <meta property="og:description" content="Tiny handmade amigurumi friends, each one stitched with love in Tenerife. Browse the collection and shop on Etsy." />
+  <meta property="og:url" content="https://stitchnotbitch.com/" />
+  <meta property="og:image" content="https://stitchnotbitch.com/photos/banner.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:locale:alternate" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Stitchnotbitch · Tiny handmade friends" />
+  <meta name="twitter:description" content="Tiny handmade amigurumi friends, made with love in Tenerife." />
+  <meta name="twitter:image" content="https://stitchnotbitch.com/photos/banner.jpg" />
+  <link rel="preload" href="fonts/nunito-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/quicksand-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="fonts.css" />
   <style>
     :root {
       --paper: #FCF7F2; --blush: #F7DEE3; --blush-soft: #FBEEF0; --blush-deep: #F2C9D2;
@@ -304,7 +318,9 @@
         <a class="mark" href="#top">Stitch<span class="script">not</span>bitch</a>
         <nav class="foot__links">
           <a href="#" data-etsy>Etsy</a>
-          <a href="#" data-ig>Instagram</a>
+          <a href="legal.html#aviso" data-i18n="footLegal">Legal notice</a>
+          <a href="legal.html#privacidad" data-i18n="footPrivacy">Privacy</a>
+          <a href="legal.html#cookies">Cookies</a>
         </nav>
       </div>
       <p class="foot__fine">
@@ -339,7 +355,8 @@
           aboutP3:"Thank you for looking today. I look forward to making you and your loved ones happy too.",
           bandEyebrow:"The shop", bandTitle:"Every friend is one of a kind. <span class=\"script\">Find them on Etsy.</span>",
           bandNote:"Got an idea for a new friend? Leave it in the comments — I love hearing them.",
-          footFine:"Tiny handmade friends, made with love in Tenerife."
+          footFine:"Tiny handmade friends, made with love in Tenerife.",
+          footLegal:"Legal notice", footPrivacy:"Privacy"
         },
         es: {
           navShop:"Comprar en Etsy",
@@ -359,7 +376,8 @@
           aboutP3:"Gracias por mirar hoy. Me hará mucha ilusión haceros felices a ti y a los tuyos también.",
           bandEyebrow:"La tienda", bandTitle:"Cada amigo es único. <span class=\"script\">Encuéntralos en Etsy.</span>",
           bandNote:"¿Tienes una idea para un nuevo amiguito? Déjala en los comentarios — me encanta leerlas.",
-          footFine:"Pequeños amigos hechos a mano, con amor, en Tenerife."
+          footFine:"Pequeños amigos hechos a mano, con amor, en Tenerife.",
+          footLegal:"Aviso legal", footPrivacy:"Privacidad"
         }
       };
       var KEY = "stitch-lang";
