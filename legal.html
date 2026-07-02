@@ -1,0 +1,192 @@
+<!doctype html>
+<!-- Stitchnotbitch legal pages — Aviso Legal / Privacidad / Cookies. Bilingual EN/ES
+     (shares the main site's language via localStorage 'stitch-lang'; ES authoritative).
+     Self-hosted fonts, no third-party calls, no tracking. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#FCF7F2" />
+  <title>Legal · Stitchnotbitch</title>
+  <meta name="description" content="Legal notice, privacy policy and cookie policy for Stitchnotbitch." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preload" href="fonts/nunito-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="fonts.css" />
+  <style>
+    :root{ --paper:#FCF7F2; --blush:#F7DEE3; --blush-soft:#FBEEF0; --blush-deep:#F2C9D2; --pink:#E58AA0; --pink-deep:#D26F89;
+      --ink:#5E4A52; --ink-soft:rgba(94,74,82,.66); --ink-faint:rgba(94,74,82,.42); --hairline:rgba(94,74,82,.13);
+      --font-display:"Quicksand",system-ui,sans-serif; --font-script:"Caveat",cursive; --font-body:"Nunito",system-ui,sans-serif;
+      --gutter:clamp(1.25rem,5vw,4rem); }
+    *,*::before,*::after{box-sizing:border-box;}
+    body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--font-body);font-size:1.02rem;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+      background:#F6ECF3 linear-gradient(180deg, #F4C6D6 0%, #F8D2C0 16%, #FBE7C0 32%, #E2ECC4 50%, #C1E4DF 66%, #C4D6F1 82%, #F6ECF3 100%);}
+    a{color:var(--pink-deep);text-decoration:none;} a:hover{color:var(--ink);}
+    h1,h2,h3,p,ul,li{margin:0;padding:0;}
+    .wrap{max-width:52rem;margin:0 auto;padding:0 var(--gutter);}
+    .mark{font-family:var(--font-display);font-weight:700;font-size:1.42rem;color:var(--ink);display:inline-flex;align-items:baseline;gap:0.12em;white-space:nowrap;}
+    .mark .script{font-family:var(--font-script);color:var(--pink-deep);font-size:1.5em;line-height:0;transform:translateY(.06em) rotate(-6deg);}
+    .masthead{position:sticky;top:0;z-index:20;background:rgba(252,247,242,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--hairline);}
+    .masthead__in{display:flex;align-items:center;justify-content:space-between;gap:1rem;height:4.4rem;max-width:52rem;margin:0 auto;padding:0 var(--gutter);}
+    .langtoggle{display:inline-flex;border:1px solid var(--blush-deep);border-radius:999px;overflow:hidden;font-family:var(--font-display);font-size:.7rem;font-weight:700;letter-spacing:.1em;}
+    .langtoggle button{padding:.4rem .62rem;background:transparent;border:0;color:var(--ink-soft);font:inherit;cursor:pointer;transition:background .2s,color .2s;}
+    .langtoggle button+button{border-left:1px solid var(--blush-deep);}
+    .langtoggle button[aria-current="true"]{background:var(--pink);color:#fff;}
+    .legal{padding:clamp(2rem,5vw,3.5rem) 0 clamp(3rem,6vw,5rem);}
+    .back{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:.9rem;margin-bottom:1.2rem;}
+    .legal h1{font-family:var(--font-display);font-weight:700;font-size:clamp(2rem,5vw,2.8rem);line-height:1.05;color:var(--ink);}
+    .updated{color:var(--ink-faint);font-size:.85rem;margin-top:.5rem;}
+    .toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.6rem 0 0;}
+    .toc a{font-family:var(--font-display);font-weight:600;font-size:.85rem;background:rgba(252,247,242,.7);border:1px solid var(--hairline);padding:.4rem .9rem;border-radius:999px;}
+    .toc a:hover{border-color:var(--pink);color:var(--pink-deep);}
+    section.doc{margin-top:clamp(2.2rem,5vw,3.2rem);scroll-margin-top:6rem;background:rgba(252,247,242,.72);border:1px solid var(--hairline);border-radius:18px;padding:clamp(1.4rem,4vw,2.2rem);}
+    section.doc h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.4rem,3.5vw,1.9rem);color:var(--ink);}
+    section.doc h3{font-family:var(--font-display);font-weight:600;font-size:1.02rem;color:var(--ink);margin-top:1.3rem;}
+    section.doc p{color:var(--ink-soft);margin-top:.7rem;}
+    section.doc ul{list-style:none;margin-top:.7rem;}
+    section.doc li{color:var(--ink-soft);position:relative;padding-left:1.2rem;margin-top:.45rem;}
+    section.doc li::before{content:"";position:absolute;left:.1rem;top:.62em;width:.4rem;height:.4rem;border-radius:50%;background:var(--pink);}
+    .foot{border-top:1px solid var(--hairline);padding:2.2rem 0;text-align:center;color:var(--ink-faint);font-size:.82rem;margin-top:2rem;}
+    .foot a{font-family:var(--font-display);font-weight:600;}
+    html[lang="es"] .l-en{display:none;} html[lang="en"] .l-es{display:none;}
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead__in">
+      <a class="mark" href="index.html">Stitch<span class="script">not</span>bitch</a>
+      <div class="langtoggle" role="group" aria-label="Language · Idioma">
+        <button type="button" data-lang-set="en">EN</button>
+        <button type="button" data-lang-set="es">ES</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="legal">
+    <div class="wrap">
+      <a class="back" href="index.html"><span class="l-en">← Back home</span><span class="l-es">← Volver al inicio</span></a>
+      <h1><span class="l-en">Legal</span><span class="l-es">Aviso legal</span></h1>
+      <p class="updated"><span class="l-en">Last updated: 2 July 2026</span><span class="l-es">Última actualización: 2 de julio de 2026</span></p>
+      <nav class="toc" aria-label="Sections">
+        <a href="#aviso"><span class="l-en">Legal notice</span><span class="l-es">Aviso legal</span></a>
+        <a href="#privacidad"><span class="l-en">Privacy</span><span class="l-es">Privacidad</span></a>
+        <a href="#cookies">Cookies</a>
+      </nav>
+
+      <!-- ==================== AVISO LEGAL ==================== -->
+      <section class="doc" id="aviso">
+        <h2><span class="l-en">Legal notice</span><span class="l-es">Aviso legal</span></h2>
+        <div class="l-es">
+          <p>En cumplimiento del artículo 10 de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se facilita la siguiente información:</p>
+          <ul>
+            <li><strong>Titular del sitio:</strong> Joanna, responsable de la marca artesanal «Stitchnotbitch».</li>
+            <li><strong>Ubicación:</strong> Tenerife, Islas Canarias (España).</li>
+            <li><strong>Contacto:</strong> a través de la <a href="https://www.etsy.com/shop/stitchnotbitch" target="_blank" rel="noopener">tienda de Etsy</a> de la titular.</li>
+          </ul>
+          <h3>Objeto del sitio</h3>
+          <p>stitchnotbitch.com es un sitio <strong>informativo</strong> que muestra los juguetes de crochet hechos a mano por la titular. Las compras se realizan a través de su tienda de Etsy; este sitio no procesa ventas ni pagos.</p>
+          <h3>Propiedad intelectual</h3>
+          <p>Los textos, fotografías y diseños de este sitio son propiedad de la titular. No está permitida su reproducción, distribución o transformación sin autorización expresa.</p>
+          <h3>Legislación aplicable</h3>
+          <p>La relación entre la titular y los usuarios del sitio se rige por la legislación española.</p>
+        </div>
+        <div class="l-en">
+          <p>In accordance with article 10 of Spanish Law 34/2002 on Information Society Services and Electronic Commerce (LSSI-CE), the following information is provided:</p>
+          <ul>
+            <li><strong>Site owner:</strong> Joanna, behind the handmade brand "Stitchnotbitch".</li>
+            <li><strong>Location:</strong> Tenerife, Canary Islands (Spain).</li>
+            <li><strong>Contact:</strong> via the owner's <a href="https://www.etsy.com/shop/stitchnotbitch" target="_blank" rel="noopener">Etsy shop</a>.</li>
+          </ul>
+          <h3>Purpose of the site</h3>
+          <p>stitchnotbitch.com is an <strong>informational</strong> site showcasing the handmade crochet toys made by the owner. Purchases are made through her Etsy shop; this site does not process sales or payments.</p>
+          <h3>Intellectual property</h3>
+          <p>The text, photographs and designs on this site belong to the owner. Reproduction, distribution or modification without express permission is not allowed.</p>
+          <h3>Applicable law</h3>
+          <p>The relationship between the owner and users of the site is governed by Spanish law.</p>
+        </div>
+      </section>
+
+      <!-- ==================== PRIVACIDAD ==================== -->
+      <section class="doc" id="privacidad">
+        <h2><span class="l-en">Privacy policy</span><span class="l-es">Política de privacidad</span></h2>
+        <div class="l-es">
+          <p>Tu privacidad importa. Este sitio se ha diseñado para recopilar la menor cantidad de datos posible.</p>
+          <h3>No recopilamos datos personales</h3>
+          <p>Este sitio no tiene formularios de contacto, ni analítica, ni cookies de seguimiento. Simplemente navegar por él no nos facilita ningún dato personal tuyo.</p>
+          <h3>Alojamiento y registros técnicos</h3>
+          <p>El sitio está alojado en GitHub Pages (GitHub, Inc.). Como cualquier servidor web, GitHub puede registrar datos técnicos —por ejemplo, direcciones IP— en sus registros de servidor con fines de seguridad y funcionamiento. Base jurídica: interés legítimo. El DNS del dominio lo gestiona Cloudflare, Inc.</p>
+          <h3>Preferencia de idioma</h3>
+          <p>Guardamos tu elección de idioma en el almacenamiento local de tu navegador (<em>localStorage</em>). Es una función técnica: no te identifica, no es una cookie de seguimiento y no se comparte con nadie.</p>
+          <h3>Compras en Etsy</h3>
+          <p>Las ventas se realizan en <a href="https://www.etsy.com/shop/stitchnotbitch" target="_blank" rel="noopener">Etsy</a>. Cuando compras, es Etsy quien trata tus datos como responsable del tratamiento; te recomendamos consultar su política de privacidad.</p>
+          <h3>Tus derechos</h3>
+          <p>Conforme al Reglamento General de Protección de Datos (RGPD), tienes derecho de acceso, rectificación, supresión, oposición, limitación y portabilidad. Para ejercerlos, contacta con la titular a través de su tienda de Etsy. También puedes presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (AEPD)</a>.</p>
+          <p>No compartimos datos con terceros con fines publicitarios ni realizamos transferencias internacionales de datos personales desde este sitio.</p>
+        </div>
+        <div class="l-en">
+          <p>Your privacy matters. This site is designed to collect as little data as possible.</p>
+          <h3>We don't collect personal data</h3>
+          <p>This site has no contact forms, no analytics, and no tracking cookies. Simply browsing it gives us no personal data about you.</p>
+          <h3>Hosting and technical logs</h3>
+          <p>The site is hosted on GitHub Pages (GitHub, Inc.). Like any web server, GitHub may record technical data — such as IP addresses — in its server logs for security and operational purposes. Legal basis: legitimate interest. The domain's DNS is managed by Cloudflare, Inc.</p>
+          <h3>Language preference</h3>
+          <p>We save your language choice in your browser's local storage (<em>localStorage</em>). It's a technical feature: it doesn't identify you, it isn't a tracking cookie, and it's never shared.</p>
+          <h3>Purchases on Etsy</h3>
+          <p>Sales happen on <a href="https://www.etsy.com/shop/stitchnotbitch" target="_blank" rel="noopener">Etsy</a>. When you buy, Etsy acts as the data controller for your information; we recommend reviewing their privacy policy.</p>
+          <h3>Your rights</h3>
+          <p>Under the General Data Protection Regulation (GDPR), you have the right of access, rectification, erasure, objection, restriction and portability. To exercise them, contact the owner via her Etsy shop. You may also lodge a complaint with the <a href="https://www.aepd.es" target="_blank" rel="noopener">Spanish Data Protection Agency (AEPD)</a>.</p>
+          <p>We don't share data with third parties for advertising, nor make international transfers of personal data from this site.</p>
+        </div>
+      </section>
+
+      <!-- ==================== COOKIES ==================== -->
+      <section class="doc" id="cookies">
+        <h2><span class="l-en">Cookie policy</span><span class="l-es">Política de cookies</span></h2>
+        <div class="l-es">
+          <p>Este sitio <strong>no utiliza cookies de seguimiento, analítica ni publicidad</strong>.</p>
+          <h3>Almacenamiento local</h3>
+          <p>Guardamos una única preferencia técnica —tu idioma (clave «stitch-lang»)— en el almacenamiento local del navegador. Recuerda si prefieres inglés o español. No es una cookie de seguimiento y está exenta de consentimiento según la guía de la AEPD sobre cookies.</p>
+          <h3>Sin terceros</h3>
+          <p>Las tipografías se sirven desde este mismo dominio, por lo que el sitio no realiza llamadas a servidores externos al cargarse.</p>
+          <h3>Cómo borrarlo</h3>
+          <p>Puedes borrar el almacenamiento local desde la configuración de tu navegador en cualquier momento.</p>
+        </div>
+        <div class="l-en">
+          <p>This site uses <strong>no tracking, analytics or advertising cookies</strong>.</p>
+          <h3>Local storage</h3>
+          <p>We store a single technical preference — your language (key "stitch-lang") — in your browser's local storage. It remembers whether you prefer English or Spanish. It isn't a tracking cookie and is exempt from consent under the AEPD's cookie guidance.</p>
+          <h3>No third parties</h3>
+          <p>Fonts are served from this same domain, so the site makes no external server calls when it loads.</p>
+          <h3>How to clear it</h3>
+          <p>You can clear local storage from your browser settings at any time.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <a class="mark" href="index.html">Stitch<span class="script">not</span>bitch</a>
+      <p style="margin-top:1rem"><span class="l-en">Tiny handmade friends, made with love in Tenerife.</span><span class="l-es">Pequeños amigos hechos a mano, con amor, en Tenerife.</span></p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var KEY="stitch-lang";
+      function apply(lang){
+        if(lang!=="en"&&lang!=="es")lang="en";
+        document.documentElement.lang=lang;
+        document.querySelectorAll("[data-lang-set]").forEach(function(b){
+          b.setAttribute("aria-current", b.getAttribute("data-lang-set")===lang?"true":"false");
+        });
+        try{localStorage.setItem(KEY,lang);}catch(e){}
+      }
+      var saved; try{saved=localStorage.getItem(KEY);}catch(e){}
+      apply(saved||"en");
+      document.querySelectorAll("[data-lang-set]").forEach(function(b){
+        b.addEventListener("click",function(){apply(b.getAttribute("data-lang-set"));});
+      });
+    })();
+  </script>
+</body>
+</html>
