@@ -43,25 +43,41 @@
     .product{padding:clamp(2rem,5vw,3.5rem) 0 clamp(3rem,6vw,5rem);}
     .product__grid{display:grid;grid-template-columns:1fr;gap:clamp(1.5rem,4vw,3rem);align-items:start;}
     @media(min-width:50rem){.product__grid{grid-template-columns:1fr 1fr;}}
-    .product__media{border-radius:22px;overflow:hidden;background:var(--blush-soft);box-shadow:0 18px 40px rgba(94,74,82,.14);border:5px solid #fff;}
-    .product__media img{width:100%;height:auto;}
+    .product__media{position:relative;border-radius:20px;background:#fff;padding:10px;box-shadow:0 18px 40px rgba(94,74,82,.14);}
+    .product__media::after{content:"";position:absolute;inset:4px;border:2px dashed var(--blush-deep);border-radius:16px;pointer-events:none;}
+    .product__media img{width:100%;height:auto;border-radius:12px;}
     .product__thumbs{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.9rem;}
     .product__thumbs button{padding:0;border:3px solid transparent;border-radius:14px;overflow:hidden;background:#fff;cursor:pointer;width:74px;height:74px;box-shadow:0 6px 16px rgba(94,74,82,.10);transition:border-color .18s,transform .18s;}
     .product__thumbs button:hover{transform:translateY(-2px);}
     .product__thumbs button[aria-current="true"]{border-color:var(--pink);}
     .product__thumbs img{width:100%;height:100%;object-fit:cover;}
-    .back{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:.9rem;color:var(--pink-deep);margin-bottom:1rem;}
+    .back{display:inline-block;font-family:var(--font-display);font-weight:600;font-size:.9rem;color:var(--pink-cta);margin-bottom:1rem;}
     .back:hover{color:var(--ink);}
     .product__name{font-family:var(--font-display);font-weight:700;font-size:clamp(2rem,5vw,3rem);line-height:1.05;color:var(--ink);}
-    .product__dims{font-family:var(--font-display);font-weight:600;color:var(--pink-deep);margin-top:.8rem;}
+    .product__dims{font-family:var(--font-display);font-weight:600;color:var(--pink-cta);margin-top:.8rem;}
     .product__desc{color:var(--ink-soft);margin-top:1rem;max-width:42ch;}
     .product__cta{margin-top:1.6rem;}
     .product__note{color:var(--ink-faint);font-size:.82rem;margin-top:1.2rem;max-width:38ch;}
     .foot{border-top:1px solid var(--hairline);padding:2rem 0;text-align:center;color:var(--ink-faint);font-size:.78rem;}
-    .foot__legal{margin-top:.5rem;} .foot__legal a{color:var(--pink-deep);font-weight:600;} .foot__legal a:hover{color:var(--ink);}
+    .foot__legal{margin-top:.5rem;} .foot__legal a{color:var(--pink-cta);font-weight:600;} .foot__legal a:hover{color:var(--ink);}
+    /* more friends — keeps the browse going */
+    .more{padding:clamp(2.2rem,5vw,3.5rem) 0 clamp(2.6rem,6vw,4rem);}
+    .stitches{display:block;width:84px;height:12px;margin:0 auto 0.8rem;color:var(--pink);}
+    .more__title{text-align:center;font-family:var(--font-display);font-weight:700;font-size:clamp(1.5rem,4vw,2rem);color:var(--ink);margin:0 0 1.6rem;}
+    .more__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(0.9rem,2vw,1.4rem);}
+    @media(min-width:46rem){.more__grid{grid-template-columns:repeat(4,1fr);}}
+    .mcard{display:block;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(94,74,82,.09);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease;}
+    .mcard:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(94,74,82,.15);}
+    .mcard__img{display:block;aspect-ratio:1/1;overflow:hidden;background:var(--blush-soft);}
+    .mcard__img img{width:100%;height:100%;object-fit:cover;}
+    .mcard__cap{display:block;padding:.6rem .8rem .8rem;font-family:var(--font-display);font-weight:600;font-size:.9rem;text-align:center;color:var(--ink);}
+    @media (prefers-reduced-motion:reduce){.mcard,.mcard:hover,.btn--fill:hover,.product__thumbs button:hover{transform:none;}}
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="stitchrun" viewBox="0 0 84 12"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M2 9 Q10 0 18 9 Q26 0 34 9 Q42 0 50 9 Q58 0 66 9 Q74 0 82 9" /></symbol>
+  </svg>
   <header class="masthead">
     <div class="wrap masthead__in">
       <a class="mark" href="index.html">Stitch<span class="script">not</span>bitch</a>
@@ -90,6 +106,13 @@
         <p class="product__note" id="pNote" data-c="note"></p>
       </div>
     </div>
+    <section class="more" aria-labelledby="moreTitle">
+      <div class="wrap">
+        <svg class="stitches" aria-hidden="true" focusable="false"><use href="#stitchrun"/></svg>
+        <h2 class="more__title" id="moreTitle" data-c="more">More friends to meet</h2>
+        <div class="more__grid" id="pMore"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="foot"><div class="wrap">
@@ -161,9 +184,9 @@
     };
     var CHROME = {
       en:{ shop:"Shop on Etsy", back:"← All the friends", dimsLabel:"Approx. size", sample:"Tenerife", legal:"Legal notice", privacy:"Privacy",
-           note:"Each friend is one of a kind — when it's gone, it's gone. Tap through to see it on Etsy.", notFound:"Friend not found." },
+           note:"Each friend is one of a kind — when it's gone, it's gone. Tap through to see it on Etsy.", notFound:"Friend not found.", more:"More friends to meet" },
       es:{ shop:"Comprar en Etsy", back:"← Todos los amiguitos", dimsLabel:"Tamaño aprox.", sample:"Tenerife", legal:"Aviso legal", privacy:"Privacidad",
-           note:"Cada amiguito es único — cuando se va, se va. Toca para verlo en Etsy.", notFound:"Amiguito no encontrado." }
+           note:"Cada amiguito es único — cuando se va, se va. Toca para verlo en Etsy.", notFound:"Amiguito no encontrado.", more:"Más amiguitos por conocer" }
     };
     function getLang(){ try{ var l=localStorage.getItem("stitch-lang"); return (l==="es")?"es":"en"; }catch(e){ return "en"; } }
     function render(){
@@ -172,6 +195,25 @@
       document.querySelectorAll("[data-lang-set]").forEach(function(b){ b.setAttribute("aria-current", b.getAttribute("data-lang-set")===l?"true":"false"); });
       var id=new URLSearchParams(location.search).get("id");
       var p=PRODUCTS[id];
+      // more-friends strip — rotates by current id so neighbours differ per page;
+      // uses each friend's first clean studio shot (gallery[1]), not the text-heavy cover
+      var more=document.getElementById("pMore");
+      if(more){
+        more.innerHTML="";
+        var all=Object.keys(PRODUCTS);
+        var others=all.filter(function(k){return k!==id;});
+        var start=Math.max(0,all.indexOf(id));
+        for(var i=0;i<4&&i<others.length;i++){
+          var k=others[(start+i)%others.length];
+          var q=PRODUCTS[k];
+          var a=document.createElement("a"); a.className="mcard"; a.href="product.html?id="+k;
+          var src=(q.gallery&&q.gallery[1])?q.gallery[1]:q.gallery[0];
+          var im=document.createElement("img"); im.src=src; im.loading="lazy"; im.alt=q.name[l];
+          var sp=document.createElement("span"); sp.className="mcard__img"; sp.appendChild(im);
+          var cap=document.createElement("span"); cap.className="mcard__cap"; cap.textContent=q.name[l];
+          a.appendChild(sp); a.appendChild(cap); more.appendChild(a);
+        }
+      }
       if(!p){ document.getElementById("pName").textContent=c.notFound; document.getElementById("pImg").style.display="none"; return; }
       var gal=p.gallery||[p.photo]; var img=document.getElementById("pImg");
       img.src=gal[0]; img.alt=p.name[l];
