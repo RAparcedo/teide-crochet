@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://stitchnotbitch.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://stitchnotbitch.com/legal.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=sheep</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=thin-lizzie</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=dolly</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=pig</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=bunny</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=lion</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=teddy</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=snail</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=giraffe</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://stitchnotbitch.com/product.html?id=dragon</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/sheep.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/sheep.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/giraffe.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/giraffe.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/dragon.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/dragon.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/thin-lizzie.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/thin-lizzie.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/dolly.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/dolly.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/pig.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/pig.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/bunny.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/bunny.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/lion.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/lion.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/teddy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/teddy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/snail.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/snail.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
