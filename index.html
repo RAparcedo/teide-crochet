@@ -158,6 +158,19 @@
     .card:hover .card__img img { transform:scale(1.05); }
     .card__cap { padding:0.7rem 0.9rem 0.9rem; font-family:var(--font-display); font-weight:600; font-size:0.95rem; text-align:center; }
 
+    /* dolls — two heirloom portraits hung like a little gallery wall */
+    .dollwall { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(1.2rem,3.5vw,2.6rem); max-width:56rem; margin:0 auto; align-items:start; }
+    .dollframe { display:block; }
+    .dollframe__mat { display:block; position:relative; background:#fff; padding:10px; border-radius:18px; box-shadow:0 16px 36px rgba(94,74,82,.14); transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease; }
+    .dollframe__mat::after { content:""; position:absolute; inset:4px; border:2px dashed var(--blush-deep); border-radius:14px; pointer-events:none; }
+    .dollframe__mat img { width:100%; height:auto; border-radius:10px; }
+    .dollframe--l .dollframe__mat { transform:rotate(-1.4deg); }
+    .dollframe--r .dollframe__mat { transform:rotate(1.4deg); }
+    .dollframe--r { margin-top:clamp(1.6rem,4vw,2.8rem); }
+    .dollframe:hover .dollframe__mat, .dollframe:focus-visible .dollframe__mat { transform:rotate(0deg); box-shadow:0 22px 44px rgba(94,74,82,.2); }
+    .dollframe__cap { display:block; text-align:center; margin-top:0.9rem; font-family:var(--font-display); font-weight:600; font-size:1.05rem; color:var(--ink); }
+    @media (prefers-reduced-motion:reduce){ .dollframe__mat{transition:none;} .dollframe:hover .dollframe__mat{transform:rotate(-1.4deg);} .dollframe--r:hover .dollframe__mat{transform:rotate(1.4deg);} }
+
     /* about */
     .about { display:grid; grid-template-columns:1fr; gap:clamp(2rem,5vw,3.5rem); align-items:center; }
     @media (min-width:54rem){ .about { grid-template-columns:1fr 0.85fr; } .about__photo { order:2; } }
@@ -286,9 +299,15 @@
           <h2 class="display section__title" data-i18n="dollsTitle">Handmade dolls</h2>
           <p class="section__sub" data-i18n="dollsSub">Heirloom-quality dolls in a soft bamboo, silk &amp; cashmere blend — each one truly one of a kind.</p>
         </div>
-        <div class="masonry" data-reveal>
-          <a class="card" href="product.html?id=thin-lizzie"><div class="card__img"><img src="photos/p/thin-lizzie/cover.jpg" alt="Thin Lizzie — handmade crochet doll, 25 cm" loading="lazy" /></div><div class="card__cap" data-i18n="capLizzie">Thin Lizzie</div></a>
-          <a class="card" href="product.html?id=dolly"><div class="card__img"><img src="photos/p/dolly/cover.jpg" alt="Dolly Daydream — handmade crochet dolly" loading="lazy" /></div><div class="card__cap" data-i18n="capDolly">Dolly Daydream</div></a>
+        <div class="dollwall" data-reveal>
+          <a class="dollframe dollframe--l" href="product.html?id=thin-lizzie">
+            <span class="dollframe__mat"><img src="photos/p/thin-lizzie/cover.jpg" alt="Thin Lizzie — handmade crochet doll, 25 cm" loading="lazy" /></span>
+            <span class="dollframe__cap" data-i18n="capLizzie">Thin Lizzie</span>
+          </a>
+          <a class="dollframe dollframe--r" href="product.html?id=dolly">
+            <span class="dollframe__mat"><img src="photos/p/dolly/cover.jpg" alt="Dolly Daydream — handmade crochet dolly" loading="lazy" /></span>
+            <span class="dollframe__cap" data-i18n="capDolly">Dolly Daydream</span>
+          </a>
         </div>
       </div>
     </section>
