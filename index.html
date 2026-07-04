@@ -140,36 +140,30 @@
     /* gallery grid */
     .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(0.9rem,2vw,1.5rem); }
     @media (min-width:46rem){ .grid--5 { grid-template-columns:repeat(3,1fr); } .grid--4 { grid-template-columns:repeat(4,1fr); } }
-    /* masonry gallery — full poster covers, no crop */
+    /* masonry — full poster covers, no crop; frames are .wallframe (see gallery walls) */
     .masonry { column-count:2; column-gap:clamp(0.9rem,2vw,1.5rem); }
     @media (min-width:46rem){ .masonry--5 { column-count:3; } }
-    .masonry .card { display:inline-block; width:100%; margin-bottom:clamp(0.9rem,2vw,1.5rem); break-inside:avoid; -webkit-column-break-inside:avoid; }
-    .masonry .card__img { aspect-ratio:auto; }
-    .masonry .card__img img { height:auto; object-fit:contain; }
-    .card { display:block; background:#fff; border-radius:18px; overflow:hidden; box-shadow:0 10px 26px rgba(94,74,82,.09); transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease; }
-    .card__cap { position:relative; }
-    .card__cap::after { content:"›"; position:absolute; right:0.9rem; top:50%; transform:translateY(-50%); color:var(--pink); font-weight:700; opacity:0; transition:opacity .2s, right .2s; }
-    .card:hover .card__cap::after { opacity:1; right:0.7rem; }
-    .card:hover { transform:translateY(-5px); box-shadow:0 18px 36px rgba(94,74,82,.16); }
-    .card__img { position:relative; aspect-ratio:1/1; overflow:hidden; background:var(--blush-soft); }
-    .card__img::after { content:""; position:absolute; inset:8px; border:2px dashed rgba(255,255,255,.9); border-radius:12px; opacity:0; transition:opacity .25s ease; pointer-events:none; }
-    .card:hover .card__img::after, .card:focus-visible .card__img::after { opacity:1; }
-    .card__img img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
-    .card:hover .card__img img { transform:scale(1.05); }
-    .card__cap { padding:0.7rem 0.9rem 0.9rem; font-family:var(--font-display); font-weight:600; font-size:0.95rem; text-align:center; }
+    .masonry .wallframe { display:inline-block; width:100%; }
 
-    /* dolls — two heirloom portraits hung like a little gallery wall */
+    /* gallery walls — stitched-mat frames, hung with a slight hand-placed tilt.
+       Dolls: 2-up staggered. Amigurumi: masonry wall of the same frames. */
     .dollwall { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(1.2rem,3.5vw,2.6rem); max-width:56rem; margin:0 auto; align-items:start; }
-    .dollframe { display:block; }
-    .dollframe__mat { display:block; position:relative; background:#fff; padding:10px; border-radius:18px; box-shadow:0 16px 36px rgba(94,74,82,.14); transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease; }
-    .dollframe__mat::after { content:""; position:absolute; inset:4px; border:2px dashed var(--blush-deep); border-radius:14px; pointer-events:none; }
-    .dollframe__mat img { width:100%; height:auto; border-radius:10px; }
-    .dollframe--l .dollframe__mat { transform:rotate(-1.4deg); }
-    .dollframe--r .dollframe__mat { transform:rotate(1.4deg); }
-    .dollframe--r { margin-top:clamp(1.6rem,4vw,2.8rem); }
-    .dollframe:hover .dollframe__mat, .dollframe:focus-visible .dollframe__mat { transform:rotate(0deg); box-shadow:0 22px 44px rgba(94,74,82,.2); }
-    .dollframe__cap { display:block; text-align:center; margin-top:0.9rem; font-family:var(--font-display); font-weight:600; font-size:1.05rem; color:var(--ink); }
-    @media (prefers-reduced-motion:reduce){ .dollframe__mat{transition:none;} .dollframe:hover .dollframe__mat{transform:rotate(-1.4deg);} .dollframe--r:hover .dollframe__mat{transform:rotate(1.4deg);} }
+    .wallframe { display:block; }
+    .wallframe__mat { display:block; position:relative; background:#fff; padding:10px; border-radius:18px; box-shadow:0 16px 36px rgba(94,74,82,.14); transform:rotate(var(--tilt,0deg)); transition:transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease; }
+    .wallframe__mat::after { content:""; position:absolute; inset:4px; border:2px dashed var(--blush-deep); border-radius:14px; pointer-events:none; }
+    .wallframe__mat img { width:100%; height:auto; border-radius:10px; }
+    .wallframe--l { --tilt:-1.4deg; }
+    .wallframe--r { --tilt:1.4deg; margin-top:clamp(1.6rem,4vw,2.8rem); }
+    .wallframe__cap { display:block; text-align:center; margin-top:0.9rem; font-family:var(--font-display); font-weight:600; font-size:1.05rem; color:var(--ink); }
+    .amiwall .wallframe { margin-bottom:clamp(1.3rem,3vw,2rem); break-inside:avoid; -webkit-column-break-inside:avoid; }
+    :where(.amiwall .wallframe:nth-child(odd)) { --tilt:-1.1deg; }
+    :where(.amiwall .wallframe:nth-child(even)) { --tilt:1deg; }
+    .amiwall .wallframe__cap { font-size:0.95rem; margin-top:0.7rem; }
+    @media (prefers-reduced-motion:no-preference){
+      .wallframe:hover, .wallframe:focus-visible { --tilt:0deg; }
+      .wallframe:hover .wallframe__mat, .wallframe:focus-visible .wallframe__mat { box-shadow:0 22px 44px rgba(94,74,82,.2); }
+    }
+    @media (prefers-reduced-motion:reduce){ .wallframe__mat{transition:none;} }
 
     /* about */
     .about { display:grid; grid-template-columns:1fr; gap:clamp(2rem,5vw,3.5rem); align-items:center; }
@@ -206,7 +200,14 @@
     .thread svg { display:block; width:100%; height:100%; }
     .thread path { fill:none; stroke:var(--pink-deep); stroke-opacity:.55; stroke-width:2.5; stroke-linecap:round; }
 
-    @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} [data-reveal]{opacity:1;transform:none;transition:none;} .card,.card:hover{transform:none;} }
+    /* weak-GPU scroll perf: backdrop blur on the two sticky bars re-blurs every frame
+       while scrolling — drop it below the rail breakpoint, slightly more opaque bg instead */
+    @media (max-width:63.98rem){
+      .masthead, .secnav { -webkit-backdrop-filter:none; backdrop-filter:none; }
+      .masthead { background:rgba(252,247,242,.96); }
+      .secnav { background:rgba(252,247,242,.97); }
+    }
+    @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto;} [data-reveal]{opacity:1;transform:none;transition:none;} }
   </style>
 </head>
 <body>
@@ -300,13 +301,13 @@
           <p class="section__sub" data-i18n="dollsSub">Heirloom-quality dolls in a soft bamboo, silk &amp; cashmere blend — each one truly one of a kind.</p>
         </div>
         <div class="dollwall" data-reveal>
-          <a class="dollframe dollframe--l" href="product.html?id=thin-lizzie">
-            <span class="dollframe__mat"><img src="photos/p/thin-lizzie/cover.jpg" alt="Thin Lizzie — handmade crochet doll, 25 cm" loading="lazy" /></span>
-            <span class="dollframe__cap" data-i18n="capLizzie">Thin Lizzie</span>
+          <a class="wallframe wallframe--l" href="product.html?id=thin-lizzie">
+            <span class="wallframe__mat"><img src="photos/p/thin-lizzie/cover.jpg" alt="Thin Lizzie — handmade crochet doll, 25 cm" loading="lazy" /></span>
+            <span class="wallframe__cap" data-i18n="capLizzie">Thin Lizzie</span>
           </a>
-          <a class="dollframe dollframe--r" href="product.html?id=dolly">
-            <span class="dollframe__mat"><img src="photos/p/dolly/cover.jpg" alt="Dolly Daydream — handmade crochet dolly" loading="lazy" /></span>
-            <span class="dollframe__cap" data-i18n="capDolly">Dolly Daydream</span>
+          <a class="wallframe wallframe--r" href="product.html?id=dolly">
+            <span class="wallframe__mat"><img src="photos/p/dolly/cover.jpg" alt="Dolly Daydream — handmade crochet dolly" loading="lazy" /></span>
+            <span class="wallframe__cap" data-i18n="capDolly">Dolly Daydream</span>
           </a>
         </div>
       </div>
@@ -321,14 +322,14 @@
           <h2 class="display section__title">Amigurumi</h2>
           <p class="section__sub" data-i18n="amiSub">Little crocheted friends — each one unique and one of a kind.</p>
         </div>
-        <div class="masonry masonry--5" data-reveal>
-          <a class="card" href="product.html?id=giraffe"><div class="card__img"><img src="photos/p/giraffe/cover.jpg" alt="Gerry the crochet giraffe — handmade amigurumi" loading="lazy" /></div><div class="card__cap" data-i18n="capGiraffe">Gerry the Giraffe</div></a>
-          <a class="card" href="product.html?id=dragon"><div class="card__img"><img src="photos/p/dragon/cover.jpg" alt="Drago the crochet dragon amigurumi toy" loading="lazy" /></div><div class="card__cap" data-i18n="capDragon">Drago the Dragon</div></a>
-          <a class="card" href="product.html?id=pig"><div class="card__img"><img src="photos/p/pig/cover.jpg" alt="Love Pig — handmade crochet pig plush, 30 cm" loading="lazy" /></div><div class="card__cap" data-i18n="capPig">Love Pig</div></a>
-          <a class="card" href="product.html?id=bunny"><div class="card__img"><img src="photos/p/bunny/cover.jpg" alt="Pastel candy bunny rabbit" loading="lazy" /></div><div class="card__cap" data-i18n="capBunny">Candy Bunny</div></a>
-          <a class="card" href="product.html?id=lion"><div class="card__img"><img src="photos/p/lion/cover.jpg" alt="Handmade crochet lion cuddly toy" loading="lazy" /></div><div class="card__cap" data-i18n="capLion">Lion</div></a>
-          <a class="card" href="product.html?id=teddy"><div class="card__img"><img src="photos/p/teddy/cover.jpg" alt="Blue teddy bear" loading="lazy" /></div><div class="card__cap" data-i18n="capBear">Blue Teddy</div></a>
-          <a class="card" href="product.html?id=snail"><div class="card__img"><img src="photos/p/snail/cover.jpg" alt="Crochet snail — Montessori counting toy" loading="lazy" /></div><div class="card__cap" data-i18n="capSnail">Snail</div></a>
+        <div class="masonry masonry--5 amiwall" data-reveal>
+          <a class="wallframe" href="product.html?id=giraffe"><span class="wallframe__mat"><img src="photos/p/giraffe/cover.jpg" alt="Gerry the crochet giraffe — handmade amigurumi" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capGiraffe">Gerry the Giraffe</span></a>
+          <a class="wallframe" href="product.html?id=dragon"><span class="wallframe__mat"><img src="photos/p/dragon/cover.jpg" alt="Drago the crochet dragon amigurumi toy" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capDragon">Drago the Dragon</span></a>
+          <a class="wallframe" href="product.html?id=pig"><span class="wallframe__mat"><img src="photos/p/pig/cover.jpg" alt="Love Pig — handmade crochet pig plush, 30 cm" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capPig">Love Pig</span></a>
+          <a class="wallframe" href="product.html?id=bunny"><span class="wallframe__mat"><img src="photos/p/bunny/cover.jpg" alt="Pastel candy bunny rabbit" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capBunny">Candy Bunny</span></a>
+          <a class="wallframe" href="product.html?id=lion"><span class="wallframe__mat"><img src="photos/p/lion/cover.jpg" alt="Handmade crochet lion cuddly toy" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capLion">Lion</span></a>
+          <a class="wallframe" href="product.html?id=teddy"><span class="wallframe__mat"><img src="photos/p/teddy/cover.jpg" alt="Blue teddy bear" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capBear">Blue Teddy</span></a>
+          <a class="wallframe" href="product.html?id=snail"><span class="wallframe__mat"><img src="photos/p/snail/cover.jpg" alt="Crochet snail — Montessori counting toy" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capSnail">Snail</span></a>
         </div>
       </div>
     </section>
@@ -478,14 +479,17 @@
       var thread=document.createElement("div");
       thread.className="thread"; thread.setAttribute("aria-hidden","true");
       document.body.appendChild(thread);
-      var tPath=null,tLen=0,tTick=false,tTimer,tY0=170,tY1=1;
+      var tPath=null,tLen=0,tTick=false,tTimer,tY0=170,tY1=1,tLast=-1;
       function setThread(){
         if(!tPath)return;
         if(reduce){tPath.style.strokeDashoffset=0;return;}
         // map the reading position (85% down the viewport) onto the path's own span,
         // so the tie-off completes while the shop tag is on screen
         var p=Math.min(1,Math.max(0,(scrollY+innerHeight*0.85-tY0)/(tY1-tY0)));
-        tPath.style.strokeDashoffset=tLen*(1-p);
+        var off=Math.round(tLen*(1-p));
+        if(Math.abs(off-tLast)<14)return; // skip sub-14px updates — each write repaints the strip, costly on weak GPUs
+        tLast=off;
+        tPath.style.strokeDashoffset=off;
       }
       function buildThread(){
         var W=document.documentElement.clientWidth;
@@ -515,6 +519,7 @@
         tPath=thread.querySelector("path");
         tLen=tPath.getTotalLength();
         tPath.style.strokeDasharray=tLen+" "+tLen;
+        tLast=-1;
         setThread();
       }
       function queueBuild(){clearTimeout(tTimer);tTimer=setTimeout(buildThread,180);}
