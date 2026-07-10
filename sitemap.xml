@@ -3,6 +3,8 @@
   <url><loc>https://stitchnotbitch.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://stitchnotbitch.com/es/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://stitchnotbitch.com/legal.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://stitchnotbitch.com/toys/daisy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stitchnotbitch.com/es/toys/daisy.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://stitchnotbitch.com/toys/sheep.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://stitchnotbitch.com/es/toys/sheep.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://stitchnotbitch.com/toys/giraffe.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
