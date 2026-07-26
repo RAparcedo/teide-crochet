@@ -117,8 +117,8 @@
       .secnav a[aria-current="true"]::before { content:""; position:absolute; left:0; top:0.6rem; bottom:0.6rem; width:3px; border-radius:3px; background:var(--pink); }
     }
     /* sticky-header offset so in-page anchors don't hide under the bars */
-    #featured, #dolls, #friends, #about { scroll-margin-top:7.5rem; }
-    @media (min-width:64rem){ #featured, #dolls, #friends, #about { scroll-margin-top:5.5rem; } }
+    #featured, #dolls, #plushies, #friends, #about { scroll-margin-top:7.5rem; }
+    @media (min-width:64rem){ #featured, #dolls, #plushies, #friends, #about { scroll-margin-top:5.5rem; } }
 
     /* hero */
     .hero { padding:clamp(2.6rem,6vw,4.8rem) 0 clamp(3rem,7vw,5rem); }
@@ -259,7 +259,8 @@
     <span class="secnav__label" data-i18n="navLabel">Secciones</span>
     <a href="#featured" data-i18n="navFeat">Baa Baa Black Sheep</a>
     <a href="#dolls" data-i18n="navDolls">Muñecas</a>
-    <a href="#friends" data-i18n="navAmi">Peluches</a>
+    <a href="#plushies" data-i18n="navPlush">Peluches</a>
+    <a href="#friends" data-i18n="navAmi">Amigurumi</a>
     <a href="#about" data-i18n="navAbout">Quién los teje</a>
   </nav>
 
@@ -340,23 +341,37 @@
       </div>
     </section>
 
-    <!-- amigurumi friends -->
+    <!-- plushies (chenille / thick chunky yarn) -->
+    <section class="section" id="plushies">
+      <div class="wrap">
+        <div class="section__head" data-reveal>
+          <svg class="stitches" aria-hidden="true" focusable="false"><use href="#stitchrun"/></svg>
+          <p class="kicker" data-i18n="plushEyebrow">los peluches</p>
+          <h2 class="display section__title" data-i18n="plushTitle">Peluches de chenille</h2>
+          <p class="section__sub" data-i18n="plushSub">Amiguitos extra suaves en grueso hilo de chenille — grandes, achuchables y únicos.</p>
+        </div>
+        <div class="masonry masonry--5 amiwall" data-reveal>
+          <a class="wallframe" href="/es/toys/chicken.html"><span class="wallframe__mat"><img src="/photos/p/chicken/cover.jpg" width="750" height="1000" alt="Chirpy the Chicken — handmade chenille crochet chicken plushie with a pink bow" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capChicken">Chirpy la Gallina</span></a>
+          <a class="wallframe" href="/es/toys/frog.html"><span class="wallframe__mat"><img src="/photos/p/frog/cover.jpg" width="750" height="1000" alt="Froggie the Frog — handmade chenille crochet frog plushie with a fuchsia flower" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capFrog">Froggie la Rana</span></a>
+          <a class="wallframe" href="/es/toys/bear.html"><span class="wallframe__mat"><img src="/photos/p/bear/cover.jpg" width="750" height="1000" alt="Benny the Bear — handmade chenille crochet teddy bear plushie" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capBenny">Benny el Osito</span></a>
+          <a class="wallframe" href="/es/toys/elephant.html"><span class="wallframe__mat"><img src="/photos/p/elephant/cover.jpg" width="1000" height="1000" alt="Sunny the Elephant — handmade chenille crochet elephant plushie in purple" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capElephant">Sunny la Elefanta</span></a>
+          <a class="wallframe" href="/es/toys/axolotl.html"><span class="wallframe__mat"><img src="/photos/p/axolotl/cover.jpg" width="1000" height="667" alt="Aqua the Axolotl — handmade chenille crochet axolotl plushie in blue" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capAxolotl">Aqua el Ajolote</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- amigurumi friends (fine cotton yarn) -->
     <section class="section" id="friends">
       <div class="wrap">
         <div class="section__head" data-reveal>
           <svg class="stitches" aria-hidden="true" focusable="false"><use href="#stitchrun"/></svg>
           <p class="kicker" data-i18n="amiEyebrow">la colección</p>
-          <h2 class="display section__title" data-i18n="amiTitle">Peluches de crochet</h2>
-          <p class="section__sub" data-i18n="amiSub">Amiguitos amigurumi — cada uno único e irrepetible.</p>
+          <h2 class="display section__title" data-i18n="amiTitle">Amigurumi</h2>
+          <p class="section__sub" data-i18n="amiSub">Amiguitos amigurumi en hilo de algodón — cada uno único e irrepetible.</p>
         </div>
         <div class="masonry masonry--5 amiwall" data-reveal>
-          <a class="wallframe" href="/es/toys/chicken.html"><span class="wallframe__mat"><img src="/photos/p/chicken/cover.jpg" width="750" height="1000" alt="Chirpy the Chicken — handmade crochet chicken plushie with a pink bow" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capChicken">Chirpy la Gallina</span></a>
-          <a class="wallframe" href="/es/toys/frog.html"><span class="wallframe__mat"><img src="/photos/p/frog/cover.jpg" width="750" height="1000" alt="Froggie the Frog — handmade crochet frog plushie with a fuchsia flower" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capFrog">Froggie la Rana</span></a>
-          <a class="wallframe" href="/es/toys/bear.html"><span class="wallframe__mat"><img src="/photos/p/bear/cover.jpg" width="750" height="1000" alt="Benny the Bear — handmade crochet teddy bear plushie" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capBenny">Benny el Osito</span></a>
           <a class="wallframe" href="/es/toys/crab.html"><span class="wallframe__mat"><img src="/photos/p/crab/cover.jpg" width="750" height="1000" alt="Carly the Crab — handmade crochet crab plushie in bright pink" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capCrab">Carly el Cangrejo</span></a>
-          <a class="wallframe" href="/es/toys/elephant.html"><span class="wallframe__mat"><img src="/photos/p/elephant/cover.jpg" width="1000" height="1000" alt="Sunny the Elephant — handmade crochet elephant plushie in purple" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capElephant">Sunny la Elefanta</span></a>
-          <a class="wallframe" href="/es/toys/axolotl.html"><span class="wallframe__mat"><img src="/photos/p/axolotl/cover.jpg" width="1000" height="667" alt="Aqua the Axolotl — handmade crochet axolotl plushie in blue" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capAxolotl">Aqua el Ajolote</span></a>
-          <a class="wallframe" href="/es/toys/daisy.html"><span class="wallframe__mat"><img src="/photos/p/daisy/cover.jpg" width="1000" height="1000" alt="Daisy Bear — handmade crochet teddy bear plushie in soft pink" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capDaisy">Osita Daisy</span></a>
+          <a class="wallframe" href="/es/toys/daisy.html"><span class="wallframe__mat"><img src="/photos/p/daisy/cover.jpg" width="1000" height="1000" alt="Daisy Bear — handmade crochet teddy bear in soft pink" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capDaisy">Osita Daisy</span></a>
           <a class="wallframe" href="/es/toys/giraffe.html"><span class="wallframe__mat"><img src="/photos/p/giraffe/cover.jpg" width="800" height="1000" alt="Gerry the crochet giraffe — handmade amigurumi" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capGiraffe">Gerry la Jirafa</span></a>
           <a class="wallframe" href="/es/toys/dragon.html"><span class="wallframe__mat"><img src="/photos/p/dragon/cover.jpg" width="1000" height="1000" alt="Drago the crochet dragon amigurumi toy" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capDragon">Drago el Dragón</span></a>
           <a class="wallframe" href="/es/toys/pig.html"><span class="wallframe__mat"><img src="/photos/p/pig/cover.jpg" width="753" height="1000" alt="Love Pig — handmade crochet pig plush, 30 cm" loading="lazy" /></span><span class="wallframe__cap" data-i18n="capPig">Cerdito Love</span></a>
