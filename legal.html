@@ -14,13 +14,13 @@
   <link rel="stylesheet" href="fonts.css" />
   <style>
     :root{ --paper:#FCF7F2; --blush:#F7DEE3; --blush-soft:#FBEEF0; --blush-deep:#F2C9D2; --pink:#E58AA0; --pink-deep:#D26F89;
-      --pink-cta:#BE4A68; --ink:#5E4A52; --ink-soft:rgba(94,74,82,.66); --ink-faint:rgba(94,74,82,.42); --hairline:rgba(94,74,82,.13);
+      --pink-cta:#BE4A68; --pink-link:#8E2C48; --ink:#5E4A52; --ink-soft:rgba(94,74,82,.66); --ink-faint:rgba(94,74,82,.42); --hairline:rgba(94,74,82,.13);
       --font-display:"Quicksand",system-ui,sans-serif; --font-script:"Caveat",cursive; --font-body:"Nunito",system-ui,sans-serif;
       --gutter:clamp(1.25rem,5vw,4rem); }
     *,*::before,*::after{box-sizing:border-box;}
     body{margin:0;min-height:100vh;color:var(--ink);font-family:var(--font-body);font-size:1.02rem;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden;
       background:#F6ECF3 linear-gradient(180deg, #F4C6D6 0%, #F8D2C0 16%, #FBE7C0 32%, #E2ECC4 50%, #C1E4DF 66%, #C4D6F1 82%, #F6ECF3 100%);}
-    a{color:var(--pink-deep);text-decoration:none;} a:hover{color:var(--ink);}
+    a{color:var(--pink-link);text-decoration:none;} a:hover{color:var(--ink);}
     h1,h2,h3,p,ul,li{margin:0;padding:0;}
     .wrap{max-width:52rem;margin:0 auto;padding:0 var(--gutter);}
     .mark{font-family:var(--font-display);font-weight:700;font-size:1.42rem;color:var(--ink);display:inline-flex;align-items:baseline;gap:0.12em;white-space:nowrap;}
@@ -37,16 +37,17 @@
     .updated{color:var(--ink-faint);font-size:.85rem;margin-top:.5rem;}
     .toc{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.6rem 0 0;}
     .toc a{font-family:var(--font-display);font-weight:600;font-size:.85rem;background:rgba(252,247,242,.7);border:1px solid var(--hairline);padding:.4rem .9rem;border-radius:999px;}
-    .toc a:hover{border-color:var(--pink);color:var(--pink-deep);}
+    .toc a:hover{border-color:var(--pink);color:var(--ink);}
     section.doc{margin-top:clamp(2.2rem,5vw,3.2rem);scroll-margin-top:6rem;background:rgba(252,247,242,.72);border:1px solid var(--hairline);border-radius:18px;padding:clamp(1.4rem,4vw,2.2rem);}
     section.doc h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.4rem,3.5vw,1.9rem);color:var(--ink);}
     section.doc h3{font-family:var(--font-display);font-weight:600;font-size:1.02rem;color:var(--ink);margin-top:1.3rem;}
     section.doc p{color:var(--ink-soft);margin-top:.7rem;}
+    section.doc p a,section.doc li a{text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px;}
     section.doc ul{list-style:none;margin-top:.7rem;}
     section.doc li{color:var(--ink-soft);position:relative;padding-left:1.2rem;margin-top:.45rem;}
     section.doc li::before{content:"";position:absolute;left:.1rem;top:.62em;width:.4rem;height:.4rem;border-radius:50%;background:var(--pink);}
     .foot{border-top:1px solid var(--hairline);padding:2.2rem 0;text-align:center;color:var(--ink-faint);font-size:.82rem;margin-top:2rem;}
-    .foot a{font-family:var(--font-display);font-weight:600;}
+    .foot a{font-family:var(--font-display);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
     html[lang="es"] .l-en{display:none;} html[lang="en"] .l-es{display:none;}
   </style>
 </head>
