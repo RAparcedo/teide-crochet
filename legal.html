@@ -1,8 +1,9 @@
 <!doctype html>
 <!-- Stitchnotbitch legal pages — Aviso Legal / Privacidad / Cookies. Bilingual EN/ES
      (shares the main site's language via localStorage 'stitch-lang'; ES authoritative).
-     Self-hosted fonts; the only third-party call is the cookieless Cloudflare
-     Web Analytics beacon (described under Privacidad + Cookies). -->
+     Self-hosted fonts. Third parties: the cookieless Cloudflare Web Analytics beacon
+     (always) and Google Analytics (ONLY after "Accept" in consent.js). Both are
+     described under Privacidad + Cookies; the _ga_ cookie name must match consent.js. -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -50,6 +51,8 @@
     .foot{border-top:1px solid var(--hairline);padding:2.2rem 0;text-align:center;color:var(--ink-faint);font-size:.82rem;margin-top:2rem;}
     .foot a{font-family:var(--font-display);font-weight:600;text-decoration:underline;text-underline-offset:2px;}
     html[lang="es"] .l-en{display:none;} html[lang="en"] .l-es{display:none;}
+    section.doc button[data-consent-reopen],.foot button[data-consent-reopen]{font-family:var(--font-display);font-weight:700;color:var(--pink-link);text-decoration:underline;text-underline-offset:2px;}
+    section.doc button[data-consent-reopen]:hover,.foot button[data-consent-reopen]:hover{color:var(--ink);}
   </style>
 </head>
 <body>
@@ -115,38 +118,42 @@
         <div class="l-es">
           <p>Tu privacidad importa. Este sitio se ha diseñado para recopilar la menor cantidad de datos posible.</p>
           <h3>Datos mínimos</h3>
-          <p>Este sitio no tiene formularios de contacto ni cookies de seguimiento. Simplemente navegar por él no nos facilita ningún dato que te identifique: solo vemos recuentos anónimos de visitas (ver «Conteo de visitas sin cookies»). Solo tratamos datos personales si decides escribirnos tú (ver más abajo).</p>
+          <p>Este sitio no tiene formularios de contacto y solo usa cookies de análisis si las aceptas. Si no las aceptas, navegar por él no nos facilita ningún dato que te identifique: solo vemos recuentos anónimos de visitas (ver «Conteo de visitas sin cookies»). Solo tratamos datos personales si decides escribirnos tú (ver más abajo).</p>
           <h3>Si nos escribes</h3>
           <p>Si nos envías un correo electrónico, trataremos tu dirección y el contenido de tu mensaje con la única finalidad de responderte. Base jurídica: tu consentimiento al escribirnos. No usamos esa dirección para enviarte publicidad, no la cedemos a terceros y la conservamos solo el tiempo necesario para atender tu consulta. El correo se gestiona con Gmail (Google Ireland Limited), que actúa como encargado del tratamiento.</p>
           <h3>Alojamiento y registros técnicos</h3>
           <p>El sitio está alojado en GitHub Pages (GitHub, Inc.). Como cualquier servidor web, GitHub puede registrar datos técnicos —por ejemplo, direcciones IP— en sus registros de servidor con fines de seguridad y funcionamiento. Base jurídica: interés legítimo. El DNS del dominio lo gestiona Cloudflare, Inc.</p>
           <h3>Conteo de visitas sin cookies</h3>
           <p>Usamos Cloudflare Web Analytics para saber cuántas personas visitan la web, desde qué país llegan y qué páginas leen. No instala cookies, no usa almacenamiento local y no crea ningún identificador que permita seguirte entre sitios. Como en cualquier visita a cualquier web, tu dirección IP llega al servidor; Cloudflare la usa únicamente para deducir el país y no la conserva asociada a la visita. Base jurídica: interés legítimo. Encargado del tratamiento: Cloudflare, Inc. (101 Townsend St., San Francisco, CA 94107, EE. UU.); puede haber transferencias internacionales a EE. UU., amparadas en el Marco de Privacidad de Datos UE-EE. UU. y en cláusulas contractuales tipo.</p>
+          <h3>Google Analytics (solo si lo aceptas)</h3>
+          <p>Si aceptas las cookies de análisis, usamos Google Analytics para saber qué páginas se visitan, desde qué país y desde qué web llegan las visitas, y qué amiguitos se abren en Etsy. Google guarda en tu navegador un identificador aleatorio (ver la política de cookies); no recogemos tu nombre ni tu correo, y Google usa tu dirección IP solo para deducir el país, sin guardarla. Base jurídica: tu consentimiento, que puedes retirar en cualquier momento desde «Ajustes de cookies», al pie de cada página. Encargado del tratamiento: Google Ireland Limited (Gordon House, Barrow Street, Dublín 4, Irlanda); puede haber transferencias a Google LLC en EE. UU., amparadas en el Marco de Privacidad de Datos UE-EE. UU. y en cláusulas contractuales tipo. Los datos de las visitas se conservan 14 meses.</p>
           <h3>Preferencia de idioma</h3>
           <p>Guardamos tu elección de idioma en el almacenamiento local de tu navegador (<em>localStorage</em>). Es una función técnica: no te identifica, no es una cookie de seguimiento y no se comparte con nadie.</p>
           <h3>Compras en Etsy</h3>
           <p>Las ventas se realizan en <a href="https://www.etsy.com/shop/stitchnotbitch" target="_blank" rel="noopener">Etsy</a>. Cuando compras, es Etsy quien trata tus datos como responsable del tratamiento; te recomendamos consultar su política de privacidad.</p>
           <h3>Tus derechos</h3>
           <p>Conforme al Reglamento General de Protección de Datos (RGPD), tienes derecho de acceso, rectificación, supresión, oposición, limitación y portabilidad. Para ejercerlos, escribe a <a href="mailto:joannafoofoo@gmail.com">joannafoofoo@gmail.com</a>. También puedes presentar una reclamación ante la <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (AEPD)</a>.</p>
-          <p>No compartimos datos con terceros con fines publicitarios. Fuera del conteo de visitas descrito arriba, no realizamos transferencias internacionales de datos personales desde este sitio.</p>
+          <p>No compartimos datos con terceros con fines publicitarios. Fuera del conteo de visitas y de Google Analytics, descritos arriba, no realizamos transferencias internacionales de datos personales desde este sitio.</p>
         </div>
         <div class="l-en">
           <p>Your privacy matters. This site is designed to collect as little data as possible.</p>
           <h3>Minimal data</h3>
-          <p>This site has no contact forms and no tracking cookies. Simply browsing it gives us nothing that identifies you: we only see anonymous visit counts (see "Cookieless visit counting"). We only process personal data if you choose to write to us (see below).</p>
+          <p>This site has no contact forms and only uses analytics cookies if you accept them. If you don't, browsing it gives us nothing that identifies you: we only see anonymous visit counts (see "Cookieless visit counting"). We only process personal data if you choose to write to us (see below).</p>
           <h3>If you write to us</h3>
           <p>If you send us an email, we process your address and the content of your message for the sole purpose of replying. Legal basis: your consent in contacting us. We don't use that address to send you marketing, we don't pass it to third parties, and we keep it only as long as needed to deal with your enquiry. Email is handled with Gmail (Google Ireland Limited), acting as data processor.</p>
           <h3>Hosting and technical logs</h3>
           <p>The site is hosted on GitHub Pages (GitHub, Inc.). Like any web server, GitHub may record technical data — such as IP addresses — in its server logs for security and operational purposes. Legal basis: legitimate interest. The domain's DNS is managed by Cloudflare, Inc.</p>
           <h3>Cookieless visit counting</h3>
           <p>We use Cloudflare Web Analytics to see how many people visit the site, which country they come from and which pages they read. It sets no cookies, uses no local storage and creates no identifier that could follow you across sites. As with any visit to any website, your IP address reaches the server; Cloudflare uses it only to work out the country and does not keep it linked to the visit. Legal basis: legitimate interest. Data processor: Cloudflare, Inc. (101 Townsend St., San Francisco, CA 94107, USA); data may be transferred to the USA under the EU-US Data Privacy Framework and standard contractual clauses.</p>
+          <h3>Google Analytics (only if you accept)</h3>
+          <p>If you accept analytics cookies, we use Google Analytics to see which pages are visited, which country and website visitors come from, and which friends are opened on Etsy. Google stores a random identifier in your browser (see the cookie policy); we don't collect your name or email, and Google uses your IP address only to work out the country, without storing it. Legal basis: your consent, which you can withdraw at any time from "Cookie settings" at the bottom of every page. Data processor: Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Ireland); data may be transferred to Google LLC in the USA under the EU-US Data Privacy Framework and standard contractual clauses. Visit data is kept for 14 months.</p>
           <h3>Language preference</h3>
           <p>We save your language choice in your browser's local storage (<em>localStorage</em>). It's a technical feature: it doesn't identify you, it isn't a tracking cookie, and it's never shared.</p>
           <h3>Purchases on Etsy</h3>
           <p>Sales happen on <a href="https://www.etsy.com/shop/stitchnotbitch" target="_blank" rel="noopener">Etsy</a>. When you buy, Etsy acts as the data controller for your information; we recommend reviewing their privacy policy.</p>
           <h3>Your rights</h3>
           <p>Under the General Data Protection Regulation (GDPR), you have the right of access, rectification, erasure, objection, restriction and portability. To exercise them, write to <a href="mailto:joannafoofoo@gmail.com">joannafoofoo@gmail.com</a>. You may also lodge a complaint with the <a href="https://www.aepd.es" target="_blank" rel="noopener">Spanish Data Protection Agency (AEPD)</a>.</p>
-          <p>We don't share data with third parties for advertising. Apart from the visit counting described above, we make no international transfers of personal data from this site.</p>
+          <p>We don't share data with third parties for advertising. Apart from the visit counting and Google Analytics described above, we make no international transfers of personal data from this site.</p>
         </div>
       </section>
 
@@ -154,22 +161,36 @@
       <section class="doc" id="cookies">
         <h2><span class="l-en">Cookie policy</span><span class="l-es">Política de cookies</span></h2>
         <div class="l-es">
-          <p>Este sitio <strong>no utiliza cookies de seguimiento, analítica ni publicidad</strong>.</p>
-          <h3>Almacenamiento local</h3>
-          <p>Guardamos una única preferencia técnica —tu idioma (clave «stitch-lang»)— en el almacenamiento local del navegador. Recuerda si prefieres inglés o español. No es una cookie de seguimiento y está exenta de consentimiento según la guía de la AEPD sobre cookies.</p>
+          <p>Este sitio <strong>no utiliza cookies de publicidad</strong>. Solo instala cookies de análisis (Google Analytics) si las aceptas en el aviso de cookies; si las rechazas, no se instala ninguna.</p>
+          <h3>Almacenamiento técnico (siempre activo)</h3>
+          <p>Guardamos dos preferencias técnicas en el almacenamiento local del navegador: tu idioma (clave «stitch-lang») y tu elección sobre las cookies (clave «wf:consent:v1»), para no preguntarte en cada visita. No son cookies de seguimiento, no salen de tu navegador y están exentas de consentimiento según la guía de la AEPD sobre cookies. Pasados 24 meses te volvemos a preguntar.</p>
+          <h3>Cookies de análisis (solo si las aceptas)</h3>
+          <ul>
+            <li><strong>_ga</strong> — Google Analytics (Google Ireland Limited). Distingue a los visitantes con un identificador aleatorio. Caduca a los 2 años.</li>
+            <li><strong>_ga_9BM3GKD7X7</strong> — Google Analytics (Google Ireland Limited). Mantiene el estado de la visita. Caduca a los 2 años.</li>
+          </ul>
+          <p>Se instalan en stitchnotbitch.com, pero la información la trata Google por nuestra cuenta (ver la política de privacidad).</p>
           <h3>Conteo de visitas sin cookies</h3>
-          <p>Las tipografías se sirven desde este mismo dominio. La única llamada a un servidor externo es el contador de visitas de Cloudflare Web Analytics, que no instala cookies ni guarda nada en tu equipo, por lo que no requiere consentimiento (ver la política de privacidad).</p>
-          <h3>Cómo borrarlo</h3>
-          <p>Puedes borrar el almacenamiento local desde la configuración de tu navegador en cualquier momento.</p>
+          <p>Las tipografías se sirven desde este mismo dominio. El contador de visitas de Cloudflare Web Analytics funciona siempre, pero no instala cookies ni guarda nada en tu equipo, por lo que no requiere consentimiento (ver la política de privacidad).</p>
+          <h3>Cambiar tu elección</h3>
+          <p>Puedes cambiar o retirar tu consentimiento cuando quieras desde «Ajustes de cookies», al pie de cada página. Al retirarlo borramos las cookies de Google Analytics. También puedes borrar las cookies y el almacenamiento local desde la configuración de tu navegador.</p>
+          <p><button type="button" data-consent-reopen hidden>Abrir los ajustes de cookies</button></p>
         </div>
         <div class="l-en">
-          <p>This site uses <strong>no tracking, analytics or advertising cookies</strong>.</p>
-          <h3>Local storage</h3>
-          <p>We store a single technical preference — your language (key "stitch-lang") — in your browser's local storage. It remembers whether you prefer English or Spanish. It isn't a tracking cookie and is exempt from consent under the AEPD's cookie guidance.</p>
+          <p>This site uses <strong>no advertising cookies</strong>. It only sets analytics cookies (Google Analytics) if you accept them in the cookie notice; if you reject them, none are set.</p>
+          <h3>Technical storage (always on)</h3>
+          <p>We store two technical preferences in your browser's local storage: your language (key "stitch-lang") and your cookie choice (key "wf:consent:v1"), so we don't ask on every visit. They aren't tracking cookies, never leave your browser and are exempt from consent under the AEPD's cookie guidance. We ask again after 24 months.</p>
+          <h3>Analytics cookies (only if you accept)</h3>
+          <ul>
+            <li><strong>_ga</strong> — Google Analytics (Google Ireland Limited). Tells visitors apart with a random identifier. Expires after 2 years.</li>
+            <li><strong>_ga_9BM3GKD7X7</strong> — Google Analytics (Google Ireland Limited). Keeps track of the visit. Expires after 2 years.</li>
+          </ul>
+          <p>They're set on stitchnotbitch.com, but the information is processed by Google on our behalf (see the privacy policy).</p>
           <h3>Cookieless visit counting</h3>
-          <p>Fonts are served from this same domain. The only call to an outside server is Cloudflare Web Analytics' visit counter, which sets no cookies and stores nothing on your device, so it needs no consent (see the privacy policy).</p>
-          <h3>How to clear it</h3>
-          <p>You can clear local storage from your browser settings at any time.</p>
+          <p>Fonts are served from this same domain. Cloudflare Web Analytics' visit counter always runs, but it sets no cookies and stores nothing on your device, so it needs no consent (see the privacy policy).</p>
+          <h3>Changing your choice</h3>
+          <p>You can change or withdraw your consent at any time from "Cookie settings" at the bottom of every page. When you withdraw it, we delete the Google Analytics cookies. You can also clear cookies and local storage from your browser settings.</p>
+          <p><button type="button" data-consent-reopen hidden>Open cookie settings</button></p>
         </div>
       </section>
     </div>
@@ -179,6 +200,7 @@
     <div class="wrap">
       <a class="mark" href="index.html">Stitch<span class="script">not</span>bitch</a>
       <p style="margin-top:1rem"><span class="l-en">Tiny handmade friends, made with love in Tenerife.</span><span class="l-es">Pequeños amigos hechos a mano, con amor, en Tenerife.</span></p>
+      <p style="margin-top:.6rem"><button type="button" data-consent-reopen hidden><span class="l-en">Cookie settings</span><span class="l-es">Ajustes de cookies</span></button></p>
     </div>
   </footer>
 
@@ -201,5 +223,6 @@
     })();
   </script>
   <script>addEventListener("load",function(){var s=document.createElement("script");s.src="https://static.cloudflareinsights.com/beacon.min.js?token=bc82f7f0763b494d8efba27123a7af58";document.body.appendChild(s);});</script>
+  <script src="/consent.js" defer></script>
 </body>
 </html>
