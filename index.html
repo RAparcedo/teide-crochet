@@ -42,7 +42,7 @@
   <style>
     :root {
       --paper: #FCF7F2; --blush: #F7DEE3; --blush-soft: #FBEEF0; --blush-deep: #F2C9D2;
-      --pink: #E58AA0; --pink-deep: #D26F89; --pink-cta: #BE4A68; --sage: #9FB089; --sage-deep: #859670;
+      --pink: #E58AA0; --pink-deep: #D26F89; --pink-cta: #BE4A68; --pink-link: #8E2C48; --sage: #9FB089; --sage-deep: #859670;
       --ink: #5E4A52; --ink-soft: rgba(94,74,82,.66); --ink-faint: rgba(94,74,82,.42);
       --hairline: rgba(94,74,82,.13);
       --font-display: "Quicksand", system-ui, sans-serif;
@@ -219,6 +219,9 @@
     .foot__links { display:flex; gap:1.3rem; font-family:var(--font-display); font-weight:600; font-size:0.9rem; }
     .foot__links a:hover { color:var(--pink-deep); }
     .foot__fine { color:var(--ink-faint); font-size:0.78rem; margin-top:1.5rem; }
+    .foot__credit { color:var(--ink); font-size:0.78rem; margin-top:0.35rem; }
+    .foot__credit a { color:var(--pink-link); font-weight:600; text-decoration:underline; text-underline-offset:2px; }
+    .foot__credit a:hover { color:var(--ink); }
     .ptag { display:inline-block; background:var(--blush-soft); border:1px dashed var(--pink); color:var(--pink-deep); font-size:0.68rem; padding:0.18rem 0.6rem; border-radius:999px; }
 
     [data-reveal] { opacity:0; transform:translateY(14px); transition:opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
@@ -434,6 +437,7 @@
         <span data-i18n="footFine">Tiny handmade friends, made with love in Tenerife.</span>
         <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" style="display:inline-block;vertical-align:-1px;color:var(--pink)" aria-hidden="true" focusable="false"><path d="M12 21s-8-5.2-8-11.2A4.6 4.6 0 0112 7a4.6 4.6 0 018 2.8C20 15.8 12 21 12 21z"/></svg>
       </p>
+      <p class="foot__credit" data-i18n="footCredit">Website by <a href="https://teide-digital.com/en" target="_blank" rel="noopener">Teide Digital</a></p>
     </div>
   </footer>
 
