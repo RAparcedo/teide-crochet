@@ -95,6 +95,26 @@
     .mcard__img img{width:100%;height:100%;object-fit:cover;}
     .mcard__cap{display:block;padding:.6rem .8rem .8rem;font-family:var(--font-display);font-weight:600;font-size:.9rem;text-align:center;color:var(--ink);}
     @media (prefers-reduced-motion:reduce){.mcard,.mcard:hover,.btn--fill:hover,.product__thumbs button:hover{transform:none;}}
+    /* tap-to-zoom (zoom.js): the photo is a link to the file, the viewer is a <dialog> */
+    .zoomlink { display:block; position:relative; cursor:zoom-in; border-radius:12px; }
+    .zoomlink__hint { position:absolute; right:.7rem; bottom:.7rem; display:inline-flex; align-items:center; gap:.35rem; padding:.3rem .7rem .3rem .55rem; border-radius:999px; background:rgba(255,255,255,.92); color:var(--ink); font-family:var(--font-display); font-weight:700; font-size:.78rem; box-shadow:0 3px 10px rgba(94,74,82,.18); }
+    .zoomlink__hint svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; }
+    .sz { position:fixed; inset:0; width:100%; height:100%; max-width:none; max-height:none; margin:0; padding:0; border:0; overflow:hidden; background:#FCF7F2; color:var(--ink); font-family:var(--font-body); cursor:zoom-out; }
+    .sz[open] { display:grid; place-items:center; }
+    .sz::backdrop { background:transparent; }
+    .sz__fig { display:grid; justify-items:center; gap:.6rem; width:100%; margin:0; padding:4rem 1rem 1.25rem; }
+    .sz__img { display:block; width:min(100%, var(--w,100%), calc((100dvh - 9rem) * var(--r,1))); height:auto; border-radius:14px; background:#fff; box-shadow:0 18px 44px rgba(94,74,82,.2); }
+    .sz__cap { font-family:var(--font-script); font-weight:700; font-size:1.5rem; line-height:1.1; color:var(--pink-cta); text-align:center; }
+    .sz__count { position:absolute; top:1.3rem; left:1.25rem; margin:0; font-family:var(--font-display); font-weight:700; font-size:.9rem; font-variant-numeric:tabular-nums; }
+    .sz__btn { position:absolute; z-index:1; display:grid; place-items:center; width:48px; height:48px; padding:0; border:2px solid var(--blush-deep); border-radius:50%; background:rgba(255,255,255,.85); color:var(--pink-cta); cursor:pointer; }
+    .sz__btn:hover { background:#fff; border-color:var(--pink); }
+    .sz__btn svg { width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
+    .sz__close { top:.75rem; right:.75rem; }
+    .sz__prev, .sz__next { top:50%; translate:0 -50%; }
+    .sz__prev { left:.5rem; } .sz__next { right:.5rem; }
+    .sz__say { position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip-path:inset(50%); white-space:nowrap; }
+    ::view-transition-group(sz) { animation-duration:.45s; animation-timing-function:cubic-bezier(.2,.8,.2,1); }
+    ::view-transition-old(sz), ::view-transition-new(sz) { height:100%; object-fit:cover; }
 </style>
 </head>
 <body>
@@ -120,7 +140,7 @@
       </nav>
       <div class="product__grid">
         <div>
-          <figure class="product__media"><img id="pImg" src="/photos/p/snail/cover.jpg" width="1000" height="800" alt="Sammy the Snail" fetchpriority="high" /></figure>
+          <figure class="product__media"><a class="zoomlink" id="pZoom" href="/photos/p/snail/cover.jpg" aria-label="Enlarge photo 1 of 4"><img id="pImg" src="/photos/p/snail/cover.jpg" width="1000" height="800" alt="Sammy the Snail" fetchpriority="high" /><span class="zoomlink__hint" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6"/></svg>tap to enlarge</span></a></figure>
           <div class="product__thumbs"><button type="button" data-src="/photos/p/snail/cover.jpg" aria-current="true" aria-label="Sammy the Snail — 1"><img src="/photos/p/snail/cover.jpg" alt="" loading="lazy" width="74" height="74" /></button><button type="button" data-src="/photos/p/snail/01.jpg" aria-current="false" aria-label="Sammy the Snail — 2"><img src="/photos/p/snail/01.jpg" alt="" loading="lazy" width="74" height="74" /></button><button type="button" data-src="/photos/p/snail/02.jpg" aria-current="false" aria-label="Sammy the Snail — 3"><img src="/photos/p/snail/02.jpg" alt="" loading="lazy" width="74" height="74" /></button><button type="button" data-src="/photos/p/snail/03.jpg" aria-current="false" aria-label="Sammy the Snail — 4"><img src="/photos/p/snail/03.jpg" alt="" loading="lazy" width="74" height="74" /></button></div>
         </div>
         <div class="product__info">
@@ -146,6 +166,7 @@
       </section>
     </div>
   </main>
+  <dialog class="sz" id="sz" aria-label="Enlarged photo" data-l-enlarge="Enlarge photo %n of %t" data-l-alt="photo %n of %t" data-l-say="Photo %n of %t"><button type="button" class="sz__btn sz__close" aria-label="Close" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><button type="button" class="sz__btn sz__prev" aria-label="Previous photo" data-step="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" class="sz__btn sz__next" aria-label="Next photo" data-step="1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button><p class="sz__count" aria-hidden="true"></p><p class="sz__say" aria-live="polite"></p><figure class="sz__fig"><img class="sz__img" alt="" decoding="async" /><figcaption class="sz__cap" aria-hidden="true"></figcaption></figure></dialog>
 
   <footer class="foot"><div class="wrap">
     <div>Stitchnotbitch · Tenerife</div>
@@ -169,6 +190,7 @@
       a.addEventListener("click",function(){try{localStorage.setItem("stitch-lang",a.getAttribute("data-lang-link"));}catch(e){}});
     });
 </script>
+  <script src="/zoom.js" defer></script>
   <script>addEventListener("load",function(){var s=document.createElement("script");s.src="https://static.cloudflareinsights.com/beacon.min.js?token=bc82f7f0763b494d8efba27123a7af58";document.body.appendChild(s);});</script>
   <script src="/consent.js" defer></script>
 </body>
