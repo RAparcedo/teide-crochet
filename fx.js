@@ -11,6 +11,8 @@
   // hover (mouse) or tap a dot (touch) to see the other photos of a friend
   document.querySelectorAll("a.wallframe[data-scrub]").forEach(function (a) {
     var srcs = a.getAttribute("data-scrub").split(",");
+    // generate.py makes these WebP widths of every scrub photo (and warns if one is missing)
+    var set = function (s) { return [320, 640, 960].map(function (w) { return s.replace(/\.jpg$/, "-w" + w + ".webp " + w + "w"); }).join(", "); };
     var name = (a.querySelector(".wallframe__cap") || {}).textContent || T.friend;
     var n = srcs.length + 1;
     var card = document.createElement("div");
@@ -23,7 +25,8 @@
     var cover = mat.querySelector("img");
     var layers = srcs.map(function (s) {
       var im = document.createElement("img");
-      im.className = "scrub__layer"; im.alt = ""; im.loading = "lazy"; im.decoding = "async"; im.src = s;
+      im.className = "scrub__layer"; im.alt = ""; im.loading = "lazy"; im.decoding = "async";
+      im.sizes = cover.sizes; im.srcset = set(s); im.src = s;
       mat.insertBefore(im, cover.nextSibling);
       return im;
     });

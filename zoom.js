@@ -39,6 +39,7 @@
     if (set.length > 1) { new Image().src = set[wrap(at + 1)]; new Image().src = set[wrap(at - 1)]; }
   }
   function syncMain() {
+    if (thumbs[at]) main.srcset = thumbs[at].getAttribute("data-srcset") || "";
     main.src = set[at]; link.href = set[at];
     thumbs.forEach(function (b, j) { b.setAttribute("aria-current", j === at ? "true" : "false"); });
   }
